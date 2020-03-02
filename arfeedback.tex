@@ -20,6 +20,7 @@
 \newenvironment{myabstract}{\begin{abstract}\begin{itshape}}{\end{itshape}\end{abstract}}
 
 \begin{document}
+	% Acronyms go here, refer to them with 
 	\begin{acronym}
 		\acro{AR}{Augmented Reality}
 	\end{acronym}
@@ -49,7 +50,7 @@
 	% Write in active, not passive
 	% Write as "we"
 	% Only two tenses (present and past)
-	% Use LaTeX acronym environment
+	% Use LaTeX acronym environment (use \ac{shorthand} and define them right after \begin{document})
 	% No paragraphs with only one sentence
 	% No different types of paragraphs for pseudo-structuring
 	% No forward references
@@ -86,7 +87,7 @@
 		\lipsum[5]
 
 	\section*{Outlook}
-		\lipsum[6] \cite{Trivedi1985}
+		\lipsum[6] \cite{Trivedi1985} \ac{AR} \ac{AR}
 
 	\pagebreak
 	\printbibliography
