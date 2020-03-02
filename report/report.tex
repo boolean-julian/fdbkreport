@@ -1,0 +1,89 @@
+\documentclass[11pt, a4paper]{article} 
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{biblatex}
+\usepackage[hidelinks]{hyperref}
+\usepackage{acronym}
+\usepackage{lipsum}
+
+\onehalfspacing
+\addbibresource{report.bib}
+
+\newcommand{\mytitle}{Usability of Textual Feedback for Wrong Usage of Augmented Reality Applications}
+\newcommand{\runninghead}{Feedback in Augmented Reality}
+\newcommand{\myauthor}{Julian Lüken, Mehmed Mustafa, Jan Schneider,\\ Steffen Tunkel, Chris Warin}
+\newcommand{\mainauthor}{Big Stonkus}
+\newcommand{\myuni}{Georg-August University, Göttingen}
+\newcommand{\titlespace}{1.5em}
+
+\markright{\uppercase{\runninghead}\hfill}
+\newenvironment{myabstract}{\begin{abstract}\begin{itshape}}{\end{itshape}\end{abstract}}
+
+\begin{document}
+	\newgeometry{left=25mm,right=25mm,top=30mm,bottom=30mm}
+	\pagestyle{empty}
+	\begin{center}
+		\begin{minipage}{.8\textwidth}
+			\centering
+			\huge\textbf{\mytitle}\normalsize\\[\titlespace]
+			\textsc{\myauthor}\\[\titlespace]
+			\today\\[\titlespace]
+			\myuni\\[\titlespace]
+		\end{minipage}
+	\end{center}
+	\vspace{\titlespace}
+	\begin{myabstract}
+		\lipsum[1-3]
+	\end{myabstract}
+	\newgeometry{left=25mm,right=25mm,top=30mm,bottom=30mm}
+	\pagestyle{myheadings}
+	\pagebreak
+
+	% REMEMBER
+	%
+	% Write in active, not passive
+	% Write as "we"
+	% Only two tenses (present and past)
+	% Use LaTeX acronym environment
+	% No paragraphs with only one sentence
+	% No different types of paragraphs for pseudo-structuring
+	% No forward references
+	% Cite consistently and clearly (\cite{NameYEAR}, Jabref)
+	% Footnotes: Just where really required
+	% No repetitions
+
+	\section*{Introduction}
+		% Motivation
+		% * Lack of good feedbacks in case of wrong AR usage	
+		%
+		% Research goals/questions
+		% * To provide appropriate feedback to wrong AR usage/gestures
+		% * What is wrong/correct AR usage?
+		% * To decide what type of feedback is better in comparison to other types
+		%
+		% Structure of report
+		% * What will follow in the next sessions
+
+		\lipsum[1]
+
+	\section*{Foundations}
+		% 
+		\lipsum[2]
+
+	\section*{Related Work}
+		\lipsum[3]
+
+	\section*{Approach}
+		\lipsum[4]
+
+	\section*{Case Study}
+		\lipsum[5]
+
+	\section*{Outlook}
+		\lipsum[6]\cite{Trivedi1985}
+
+	\pagebreak
+	\printbibliography
+\restoregeometry
+\end{document}
