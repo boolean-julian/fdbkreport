@@ -13,7 +13,6 @@
 \newcommand{\mytitle}{Usability of Textual Feedback for Wrong Usage of Augmented Reality Applications}
 \newcommand{\runninghead}{Feedback in Augmented Reality}
 \newcommand{\myauthor}{Julian Lüken, Mehmed Mustafa, Jan Schneider,\\ Steffen Tunkel, Chris Warin}
-\newcommand{\mainauthor}{Big Stonkus}
 \newcommand{\myuni}{Georg-August University, Göttingen}
 \newcommand{\titlespace}{1.5em}
 
@@ -21,6 +20,10 @@
 \newenvironment{myabstract}{\begin{abstract}\begin{itshape}}{\end{itshape}\end{abstract}}
 
 \begin{document}
+	\begin{acronym}
+		\acro{AR}{Augmented Reality}
+	\end{acronym}
+
 	\newgeometry{left=25mm,right=25mm,top=30mm,bottom=30mm}
 	\pagestyle{empty}
 	\begin{center}
@@ -34,6 +37,7 @@
 	\end{center}
 	\vspace{\titlespace}
 	\begin{myabstract}
+		% Abstract goes here
 		\lipsum[1-3]
 	\end{myabstract}
 	\newgeometry{left=25mm,right=25mm,top=30mm,bottom=30mm}
@@ -49,13 +53,13 @@
 	% No paragraphs with only one sentence
 	% No different types of paragraphs for pseudo-structuring
 	% No forward references
-	% Cite consistently and clearly (\cite{NameYEAR}, Jabref)
+	% Cite consistently and clearly (\cite{Lastname1999}, Jabref)
 	% Footnotes: Just where really required
 	% No repetitions
 
 	\section*{Introduction}
 		% Motivation
-		% * Lack of good feedbacks in case of wrong AR usage	
+		% * Lack of good feedback
 		%
 		% Research goals/questions
 		% * To provide appropriate feedback to wrong AR usage/gestures
@@ -72,6 +76,7 @@
 		\lipsum[2]
 
 	\section*{Related Work}
+		%
 		\lipsum[3]
 
 	\section*{Approach}
@@ -81,7 +86,7 @@
 		\lipsum[5]
 
 	\section*{Outlook}
-		\lipsum[6]\cite{Trivedi1985}
+		\lipsum[6] \cite{Trivedi1985}
 
 	\pagebreak
 	\printbibliography
