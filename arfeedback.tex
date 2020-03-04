@@ -10,17 +10,18 @@
 \onehalfspacing
 \addbibresource{arfeedback.bib}
 
-\newcommand{\mytitle}{Usability of Textual Feedback for Wrong Usage of Augmented Reality Applications}
+% Original assignment: Evaluate how to react on wrong AR usage
+\newcommand{\mytitle}{Evaluation of Textual Feedback for Wrong Usage of Augmented Reality Applications}
 \newcommand{\runninghead}{Feedback in Augmented Reality}
 \newcommand{\myauthor}{Julian Lüken, Mehmed Mustafa, Jan Schneider,\\ Steffen Tunkel, Chris Warin}
 \newcommand{\myuni}{Georg-August University, Göttingen}
-\newcommand{\titlespace}{1.5em}
+\newcommand{\titlespace}{1em}
 
 \markright{\uppercase{\runninghead}\hfill}
 \newenvironment{myabstract}{\begin{abstract}\begin{itshape}}{\end{itshape}\end{abstract}}
 
 \begin{document}
-	% Acronyms go here, refer to them with 
+	% Acronyms go here, refer to them with \ac{shorthand}
 	\begin{acronym}
 		\acro{AR}{Augmented Reality}
 	\end{acronym}
@@ -30,7 +31,7 @@
 	\begin{center}
 		\begin{minipage}{.8\textwidth}
 			\centering
-			\huge\textbf{\mytitle}\normalsize\\[\titlespace]
+			\begin{doublespace}\huge\textbf{\mytitle}\normalsize\\[\titlespace]\end{doublespace}
 			\textsc{\myauthor}\\[\titlespace]
 			\today\\[\titlespace]
 			\myuni\\[\titlespace]
@@ -60,26 +61,28 @@
 
 	\section*{Introduction}
 		% Motivation
-		% * Lack of good feedback
+		% * Growing use of Augmented Reality and Lack of good feedback
+		% * new technology: people don't yet know how to use AR features
+		% * making AR usable without huge introductory efforts
 		%
 		% Research goals/questions
-		% * To provide appropriate feedback to wrong AR usage/gestures
-		% * What is wrong/correct AR usage?
-		% * To decide what type of feedback is better in comparison to other types
+		% * To provide appropriate feedback to "wrong" AR usage/gestures
+		% 	* To decide what type of feedback is better in comparison to other types
 		%
 		% Structure of report
-		% * What will follow in the next sessions
+		% * "For validation of our approach we conducted a usability case study"
+		% * What will follow in the next sections
 		%
 		\lipsum[1]
 
-	\section*{Foundations}
-		% What is AR?
+	\section*{Foundations} 
+		% * What is AR?
+		% * Which frameworks/technologies were used?
+		% 	* Brief info about Vivian (which relies on state machines)
+		% 		* What gestures are "correct"? (vivian relies on 1 finger shit and moving environment)
 		%
-		% Which frameworks/technologies were used?
-		% * Brief info about Vivian/state machines(?)
-		%
-		% What is Usability(-testing)?
-		% * Explain SUS
+		% * What is Usability(-testing)?
+		% 	* Explain SUS (how did we tailor it to serve our purposes?)
 		%
 		\lipsum[2]
 
@@ -89,17 +92,63 @@
 		% * Nilsson2007: Fun and Usable: Augmented Reality Instructions in a Hospital Setting
 		% * Poupyrev2002: Developing a Generic Augmented Reality Interface
 		%
+		% parallels between above papers and this one
+		% where do we come into play in above papers?
+		% establish link between recent and past research
+		%
 		\lipsum[3]
 
 	\section*{Approach}
-		% What are wrong inputs? Which ones are wrong?
-		% Describe feedback messages (size, color, content, duration)
+		% What are "wrong" inputs? Which ones are "wrong"?
+		% Describe feedback messages (size, color, content, duration) for each implementation <- graphics
 		% Why these messages?
-		% Short: How were they implemented
-		% Short: "For validation of our approach we conducted a usability case study"
+		% 3 emerged out of 1 and 2 (see results)
+		% maybe a nice reference table for that too
 		\lipsum[4]
 
 	\section*{Case Study}
+		% SETUP
+		% * introduce prototypes
+		%	* functionalities
+		%
+		% * introduce groups(+subgroups)
+		%	* size
+		%	* what do they do
+		%	* naming conventions
+		%
+		% * introduction to participants
+		%
+		% * tasks (hints)
+		%
+		% * what do we measure and how? 
+		%	* screen recordings
+		%	* notepad
+		%
+		% * questionnaire
+		%	* SUS
+		%	* open question
+		%
+		%
+		% RESULTS
+		% * first proto toaster
+		% * first proto microwave
+		% * second proto toaster
+		% * second proto microwave
+		%
+		% * did wrong once vs did wrong multiple times
+		%
+		% * time to fulfill task per level
+		% * time to fulfill tasks per prototype order
+		% * number of wrong usages per level
+		% * percentage of which group asking for more feedback
+		% 
+		% DISCUSSION
+		% * hypothesis "visible and better feedback msg help the user to fulfill tasks faster, easier"
+		% * feedback message must be genera enough to be applicable to any possible situation
+		% * feedback message must be specific enough to be more helpful in the given situation
+		% * outlines: sus/free answers
+		% * easy prototype microwave -> intuitively usable, no feedback needed
+		%
 		\lipsum[5]
 
 	\section*{Outlook}
