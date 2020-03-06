@@ -1,16 +1,23 @@
 \documentclass[11pt, a4paper]{article} 
 \usepackage[utf8]{inputenc}
+\usepackage[nolist,nohyperlinks]{acronym}
 \usepackage{geometry}
 \usepackage{setspace}
+
 \usepackage{biblatex}
 \usepackage[hidelinks]{hyperref}
 \usepackage{nameref}
+
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage[nolist,nohyperlinks]{acronym}
-\usepackage{lipsum}
 \usepackage[hypcap=false]{caption}
+\usepackage{subcaption}
+
 \usepackage{tabularx}
+\usepackage{multirow}
+
+\usepackage{lipsum}
+
 
 \onehalfspacing
 \addbibresource{arfeedback.bib}
@@ -21,7 +28,7 @@
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 % Original assignment: Evaluate how to react on wrong AR usage
-\newcommand{\mytitle}{Evaluation of Textual Feedback for Wrong Usage of Augmented Reality Applications}
+\newcommand{\mytitle}{Evaluation of Textual Feedback for Incorrect Usage of an Augmented Reality Application}
 \newcommand{\runninghead}{Feedback in Augmented Reality}
 \newcommand{\myauthor}{Julian Lüken, Mehmed Mustafa, Jan Schneider,\\ Steffen Tunkel, Chris Warin}
 \newcommand{\myuni}{Georg-August University, Göttingen}
@@ -85,7 +92,16 @@
 		% * "For validation of our approach we conducted a usability case study"
 		% * What will follow in the next sections
 		%
-		\lipsum[1]
+		In recent years the number of available \ac{AR} applications has increased.
+		Although \ac{AR} technology is no novelty, it was not widely available for society until a wide variety of smartphones were capable of running \ac{AR} applications.
+		Since most users are newly discovering \ac{AR} technology, they don't know how to use its features yet, thus using unsupported gestures as input, which leads to frustration.
+		Our main motivation for conducting this research is the lack of good feedback in case of incorrect usage, which could help a lot of users to avoid repeating common mistakes.
+		Providing good feedback could also help teach users to control \ac{AR} applications without the need of a separate introduction.
+
+		Our research goal is to provide appropriate feedback to unsupported gestures and decide what type of textual feedback is better in comparison to other types. For validation of our approach we conducted a usability case study.
+
+		The organization of the paper is as follows. The section \nameref{sec:foundations} gives information about usability in general and the \ac{AR} environment we provide the feedback for. In the section \nameref{sec:relatedwork} we discuss similar work on \ac{AR} and feedback done in the past.
+		The \nameref{sec:approach} section gives a detailed illustration of the feedback we present to users. In the section \nameref{sec:casestudy}, we talk about the setup case study we conducted in order to validate our approach, followed by our results and the discussion thereof. Lastly, we present the \nameref{sec:summary}.
 
 	\section*{Foundations}\label{sec:foundations}
 		% * What is AR?
@@ -114,9 +130,52 @@
 		% What are "wrong" inputs? Which ones are "wrong"?
 		% Describe feedback messages (size, color, content, duration) for each implementation <- graphics
 		% Why these messages?
-		% 3 emerged out of 1 and 2 (see results)
 		% maybe a nice reference table for that too
-		\lipsum[4]
+		In order to find feedback in response to incorrect usage of an \ac{AR} application, we have to define what kinds of gestures we consider incorrect in the first place. The user interface provided by the Vivian framework is based on one finger inputs (see \nameref{sec:foundations}), therefore we should take into consideration each input that is not done with a single finger. Prominent examples for multiple finger gestures are the \emph{pinch zoom} and the \emph{two finger rotation}. To move an object in Vivian-based apps, the user has to put his finger on the object, drag it, and let go of it in the desired spot. To cover greater distances, the user can move the device. Similarly, to rotate an object in Vivian, the user has to hold their finger on the object and rotate the device until they find the desired orientation. Common misconceptions by inexperienced \ac{AR} users might include using said pinch zoom to either zoom in on objects or to bring them closer, or using two finger rotation to rotate objects.
+
+		\begin{figure}[H]
+			\vspace{1em}
+
+			\begin{subfigure}[t]{.32\textwidth}\centering
+				\textbf{Implementation 1}\\
+				limiting
+			\end{subfigure}
+			\begin{subfigure}[t]{.32\textwidth}\centering
+				\textbf{Implementation 2}\\
+				limiting and supportive
+			\end{subfigure}
+			\begin{subfigure}[t]{.32\textwidth}\centering
+				\textbf{Implementation 3}\\
+				supportive and concise
+			\end{subfigure}
+			
+			\centering
+			\includegraphics[width=.32\textwidth]{img/messages/phonepz1.png}
+			\includegraphics[width=.32\textwidth]{img/messages/phonepz2.png}
+			\includegraphics[width=.32\textwidth]{img/messages/phonepz3.png}
+			\caption{The three different feedback messages in response to the example of pinch zooming.}
+			\label{fig:feedbackonphone}
+		\end{figure}
+
+		To make users quickly and easily understand the controls of Vivian-based apps, we provide three sets of feedback message implementations that differ in content, colors, size and duration. The content of the first feedback implementation is \emph{limiting}. If the user inputs a gesture that we consider incorrect, we provide him with a message that said input is not possible. For example, if a user tried pinch zooming, they would receive a message saying: "Pinch zooming is not possible". The content of the second feedback implementation is \emph{limiting} and \emph{supporting}. The user is provided with a message stating that above mentioned input is not possible and hinting them towards what they should try instead. In the scope of the previous example, such a message would say: "Pinch zooming is not possible. Try moving around the object." In the first two implementations, the messages have the same size, color scheme and a duration of x seconds. The third implementation is \emph{supporting} and more concise. For our previous example the exact message is saying: "Step closer to enlarge on-screen objects." It also differs in color scheme and size (see Figure \ref{fig:feedbackonphone}). It is displayed for [X] seconds.
+
+		\begin{center}
+			\begin{tabular}{|C{.05\textwidth}|L{.15\textwidth}|L{.23\textwidth}|L{.45\textwidth}|} \hline
+				Imp.					& Description 														& Gesture 									& Response 	\\ \hline
+				\multirow{2}{*}{\#1}	& \multirow{2}{*}{\parbox{.15\textwidth}{limiting}}					& two finger rotation						& A			\\ \cline{3-4}
+										& 																	& pinch zoom								& B 		\\ \hline
+				\multirow{2}{*}{\#2}	& \multirow{2}{*}{\parbox{.15\textwidth}{supportive, limiting}}		& two finger rotation						& C			\\ \cline{3-4}
+										& 																	& pinch zoom								& D 		\\ \hline
+				\multirow{3}{*}{\#3}	& \multirow{3}{*}{\parbox{.15\textwidth}{supportive, concise}}		& two finger rotation (rotatable object)	& E			\\ \cline{3-4}
+										& 																	& two finger rotation (static object)		& F 		\\ \cline{3-4}
+										&																	& pinch zoom 								& G 		\\ \hline
+			\end{tabular}
+			\captionof{table}{The responses for each input in each implementation.}
+			\label{tab:feedback}
+		\end{center}
+
+		The contents of each message can be found in Table \ref{tab:feedback}. Note that the third implementation recognizes two different kinds of two finger rotations.
+
 
 	\section*{Case Study}\label{sec:casestudy}
 		% SETUP
@@ -166,9 +225,9 @@
 
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=.4\textwidth]{img/microwave.png}
+				\includegraphics[width=.4\textwidth]{img/prototypes/microwave.png}
 				\hspace{.5em}
-				\includegraphics[width=.4\textwidth]{img/toaster.png}
+				\includegraphics[width=.4\textwidth]{img/prototypes/toaster.png}
 				\caption{Augmented models of the microwave (left) and the toaster (right).}
 				\label{fig:microwaveandtoaster}
 			\end{figure}
@@ -176,9 +235,8 @@
 			The microwave's functionality is limited to heating an object inside it with constant power. It has one button to add 10 seconds to the heating duration and one to open the door. The door can be closed by moving it. The status of the microwave is visually indicated by a small display showing the remaining heating time and a light inside the device, which turns on when it is open or heating. The toaster can toast one or two pieces of bread at a time. The toasting can be started by pulling down a handle and stopped by pushing it up again or by pressing the stop button, which is on the backside. Otherwise, the toasting stops automatically after a time which is defined by the position of a rotatable knob. The time mode is divided into 'low', 'medium' and 'high'. Further functionality is provided by the unfreezing mode, which can be activated by the snowflake button on the backside. The activation of the unfreezing mode results in a longer toasting duration and is indicated by a light above the button. The toasting process itself is displayed by the glowing of the heating elements. Both prototypes have a serial number on the backside. Both scenes contain different additional objects, which the user can interact with. These are pieces of bread for the toaster and for the microwave a cup which is already inside the microwave in the beginning and a piece of cake next to it.
 			
 			\begin{center}
-				\setlength\extrarowheight{1.5pt}
-				\begin{tabular}{|L{.05\textwidth}|L{.41\textwidth}|L{.41\textwidth}|}
-					\hline \textbf{\#} & \textbf{Microwave} & \textbf{Toaster} \\
+				\begin{tabular}{|C{.05\textwidth}|L{.41\textwidth}|L{.41\textwidth}|}
+					\hline \# & Microwave & Toaster \\
 					\hline 1 & Read serial number off the microwave & Read serial number off the toaster \\
 					\hline 2 & Heat up the cup & Toast the toast \\
 					\hline 3 & Remove the cup, put the pie in, set the timer to 20 seconds and remove the plate at 5 seconds & Toast the toast on high heat and put the toaster in unfreezing mode \\
@@ -196,7 +254,7 @@
 
 			Following the test of the application the participants were asked to fill in a questionnaire. This questionnaire consists of 3 parts. First we asked participants if they have used \ac{AR} applications before. The second part is an \ac{SUS} (see \nameref{sec:foundations}) about the usability of the \ac{AR} application. The third part is an open question directly aimed to the feedback provided by the application, namely: "If you have any suggestions on what kind of feedback from the app you would find better, please let us know".
 
-	\section*{Outlook}
+	\section*{Summary and Outlook}\label{sec:summary}
 		\lipsum[6] \cite{Dey2016} \cite{Nilsson2007} \cite{Poupyrev2002} \ac{AR} \ac{AR}
 
 	\pagebreak
