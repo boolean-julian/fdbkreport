@@ -4,11 +4,21 @@
 \usepackage{setspace}
 \usepackage{biblatex}
 \usepackage[hidelinks]{hyperref}
+\usepackage{nameref}
+\usepackage{graphicx}
+\usepackage{float}
 \usepackage[nolist,nohyperlinks]{acronym}
 \usepackage{lipsum}
+\usepackage[hypcap=false]{caption}
+\usepackage{tabularx}
 
 \onehalfspacing
 \addbibresource{arfeedback.bib}
+
+% TabularX column defintions
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 % Original assignment: Evaluate how to react on wrong AR usage
 \newcommand{\mytitle}{Evaluation of Textual Feedback for Wrong Usage of Augmented Reality Applications}
@@ -17,6 +27,7 @@
 \newcommand{\myuni}{Georg-August University, Göttingen}
 \newcommand{\titlespace}{1em}
 
+% Header
 \markright{\uppercase{\runninghead}\hfill}
 \newenvironment{myabstract}{\begin{abstract}\begin{itshape}}{\end{itshape}\end{abstract}}
 
@@ -24,6 +35,7 @@
 	% Acronyms go here, refer to them with \ac{shorthand}
 	\begin{acronym}
 		\acro{AR}{Augmented Reality}
+		\acro{SUS}{System Usability Scale}
 	\end{acronym}
 
 	\newgeometry{left=25mm,right=25mm,top=30mm,bottom=30mm}
@@ -59,7 +71,7 @@
 	% Footnotes: Just where really required
 	% No repetitions
 
-	\section*{Introduction}
+	\section*{Introduction}\label{sec:introduction}
 		% Motivation
 		% * Growing use of Augmented Reality and Lack of good feedback
 		% * new technology: people don't yet know how to use AR features
@@ -75,7 +87,7 @@
 		%
 		\lipsum[1]
 
-	\section*{Foundations} 
+	\section*{Foundations}\label{sec:foundations}
 		% * What is AR?
 		% * Which frameworks/technologies were used?
 		% 	* Brief info about Vivian (which relies on state machines)
@@ -86,7 +98,7 @@
 		%
 		\lipsum[2]
 
-	\section*{Related Work}
+	\section*{Related Work}\label{sec:relatedwork}
 		% Papers (as to be found in *.bib):
 		% * Dey2016: A Systematic Review of 10 Years of Augmented Reality Usability Studies: 2005 to 2014
 		% * Nilsson2007: Fun and Usable: Augmented Reality Instructions in a Hospital Setting
@@ -98,7 +110,7 @@
 		%
 		\lipsum[3]
 
-	\section*{Approach}
+	\section*{Approach}\label{sec:approach}
 		% What are "wrong" inputs? Which ones are "wrong"?
 		% Describe feedback messages (size, color, content, duration) for each implementation <- graphics
 		% Why these messages?
@@ -106,7 +118,7 @@
 		% maybe a nice reference table for that too
 		\lipsum[4]
 
-	\section*{Case Study}
+	\section*{Case Study}\label{sec:casestudy}
 		% SETUP
 		% * introduce prototypes
 		%	* functionalities
@@ -149,7 +161,40 @@
 		% * outlines: sus/free answers
 		% * easy prototype microwave -> intuitively usable, no feedback needed
 		%
-		\lipsum[5]
+		\subsection*{Setup of the Case Study}\label{ssec:setup}
+			To evaluate the quality of our feedback implementations we conducted a case study in the domain of usability engineering. We used two different prototypes supported by the Vivian Framework (see \nameref{sec:foundations}). Both of them are quite simple kitchen devices: a toaster prototype and a microwave prototype (as seen in Figure \ref{fig:microwaveandtoaster}).
+
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=.4\textwidth]{img/microwave.png}
+				\hspace{.5em}
+				\includegraphics[width=.4\textwidth]{img/toaster.png}
+				\caption{Augmented models of the microwave (left) and the toaster (right).}
+				\label{fig:microwaveandtoaster}
+			\end{figure}
+
+			The microwave's functionality is limited to heating an object inside it with constant power. It has one button to add 10 seconds to the heating duration and one to open the door. The door can be closed by moving it. The status of the microwave is visually indicated by a small display showing the remaining heating time and a light inside the device, which turns on when it is open or heating. The toaster can toast one or two pieces of bread at a time. The toasting can be started by pulling down a handle and stopped by pushing it up again or by pressing the stop button, which is on the backside. Otherwise, the toasting stops automatically after a time which is defined by the position of a rotatable knob. The time mode is divided into 'low', 'medium' and 'high'. Further functionality is provided by the unfreezing mode, which can be activated by the snowflake button on the backside. The activation of the unfreezing mode results in a longer toasting duration and is indicated by a light above the button. The toasting process itself is displayed by the glowing of the heating elements. Both prototypes have a serial number on the backside. Both scenes contain different additional objects, which the user can interact with. These are pieces of bread for the toaster and for the microwave a cup which is already inside the microwave in the beginning and a piece of cake next to it.
+			
+			\begin{center}
+				\setlength\extrarowheight{1.5pt}
+				\begin{tabular}{|L{.05\textwidth}|L{.41\textwidth}|L{.41\textwidth}|}
+					\hline \textbf{\#} & \textbf{Microwave} & \textbf{Toaster} \\
+					\hline 1 & Read serial number off the microwave & Read serial number off the toaster \\
+					\hline 2 & Heat up the cup & Toast the toast \\
+					\hline 3 & Remove the cup, put the pie in, set the timer to 20 seconds and remove the plate at 5 seconds & Toast the toast on high heat and put the toaster in unfreezing mode \\
+					\hline
+				\end{tabular}
+				\captionof{table}{The tasks for the different prototypes.}
+				\label{tab:tasks}
+			\end{center}
+
+			Based on these functionalities we designed 3 tasks per prototype. As you can see on the concrete tasks in Table \ref{tab:tasks}, they are increasing in complexity. An example of this increase is that task 2 of the microwave asks to heat the cup, which is already in the microwave, for any time. Therefore just the start button has to be pressed once to fulfill the task. Afterwards, task 3 is to replace the cup by the pie and heat for a specific time. This contains a lot more necessary steps: open the door, move the cup out, move the pie in, close the door, press the start button multiple times and finally also press the stop button after the desired time is over.
+
+			For the case study, we divided the participants into 4 groups. Each of these groups tested another version of the feedback implementation. Participants in group 0 got no feedback at all, in group 1 they got implementation 1, in group 2 implementation 2 and finally in group 3 implementation 3 (see \nameref{sec:approach}). We acquired 10 participants per group, so in total 40 people took part in the case study. Each participant was asked to fulfill the tasks for each prototype in the order provided by Table \ref{tab:tasks}. One half of the participants were asked to do the tasks of the toaster prototype first, while the other half did the tasks for the microwave prototype first. We were able to evaluate subgroups with a certain implementation level and a certain order of prototypes they tested. Each of those subgroups contained 5 participants. In the following, the subgroups are named \emph{TM}, which translates to "first toaster, then microwave" and \emph{MT}, which translates to "first microwave then toaster", followed by the number of their feedback group. For example, a participant who was assigned the toaster first and then the microwave without any feedback was in the subgroup TM0.
+
+			Before the actual start of the test, we gave every participant a short introduction. This introduction contains information about the \ac{AR} technology and reasons behind usability testing to prepare the participants and create a similar level of expectation. It deliberately does not contain any information about how to use the application or the scope of the case study. This is important so the participants are not biased about wrong usage and the feedback they would get. During the test, we used screen recordings to measure each participants use of the application. These enabled us to acquire completion times for the different tasks and count the number of wrong usages. We used a notepad to register further observations.
+
+			Following the test of the application the participants were asked to fill in a questionnaire. This questionnaire consists of 3 parts. First we asked participants if they have used \ac{AR} applications before. The second part is an \ac{SUS} (see \nameref{sec:foundations}) about the usability of the \ac{AR} application. The third part is an open question directly aimed to the feedback provided from the application, namely: "If you have any suggestions on what kind of feedback from the app you would find better, please let us know".
 
 	\section*{Outlook}
 		\lipsum[6] \cite{Dey2016} \cite{Nilsson2007} \cite{Poupyrev2002} \ac{AR} \ac{AR}
