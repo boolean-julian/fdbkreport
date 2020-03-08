@@ -101,7 +101,7 @@
 		Our research goal is to provide appropriate feedback to unsupported gestures and decide what type of textual feedback is better in comparison to other types. For validation of our approach we conducted a usability case study.
 
 		The organization of the paper is as follows. The section \nameref{sec:foundations} gives information about usability in general and the \ac{AR} environment we provide the feedback for. In the section \nameref{sec:relatedwork} we discuss similar work on \ac{AR} and feedback done in the past.
-		The \nameref{sec:approach} section gives a detailed illustration of the feedback we present to users. In the section \nameref{sec:casestudy}, we talk about the setup case study we conducted in order to validate our approach, followed by our results and the discussion thereof. Lastly, we present the \nameref{sec:summary}.
+		The \nameref{sec:approach} section gives a detailed illustration of the feedback we present to users. In the section \nameref{sec:casestudy}, we talk about the setup case study we conducted in order to validate our approach, followed by our results and the discussion thereof. Lastly, we summarize and conclude in the \nameref{sec:summary}. 
 
 	\section*{Foundations}\label{sec:foundations}
 		% * What is AR?
@@ -112,7 +112,11 @@
 		% * What is Usability(-testing)?
 		% 	* Explain SUS (how did we tailor it to serve our purposes?)
 		%
-		\lipsum[2]
+		Since one of the main goals of this study is to find suitable user feedback for augmented reality environments, it shall be further clarified what \ac{AR} means in the context of this study and which technologies were used during it. \ac{AR} itself is used to place 3D virtual objects into a 3D real environment in real time. In our study we used three different mobile phones which are running our applications. At runtime the recorded imagery of the phone is being augmented and shown to the user, to display a mix of virtual objects and the real world.
+
+		For the design of the prototypes we used Unity3D as well as Blender. The functionalities of the prototypes have been implemented using the Vivian Framework which can be used to evaluate the usability of virtual prototypes. This is done by first modeling the virtual prototype and then modeling one or more state-machines to define the prototypes functionality.
+
+		To evaluate the different types of feedback, we decided to use usability testing as a tool to quantify the corresponding results. Therefore we chose to have the users fill out a \ac{SUS} questionnaire which we tailored to fit our needs. The basic \ac{SUS} consists of ten questions regarding a systems usability. We added a few questions which target the feedback more as well as an open feedback field, where the participants are able to share their thoughts on the system with us.
 
 	\section*{Related Work}\label{sec:relatedwork}
 		% Papers (as to be found in *.bib):
@@ -124,7 +128,7 @@
 		% where do we come into play in above papers?
 		% establish link between recent and past research
 		%
-		\lipsum[3]
+
 
 	\section*{Approach}\label{sec:approach}
 		% What are "wrong" inputs? Which ones are "wrong"?
@@ -255,7 +259,7 @@
 			Following the test of the application the participants were asked to fill in a questionnaire. This questionnaire consists of 3 parts. First we asked participants if they have used \ac{AR} applications before. The second part is an \ac{SUS} (see \nameref{sec:foundations}) about the usability of the \ac{AR} application. The third part is an open question directly aimed to the feedback provided by the application, namely: "If you have any suggestions on what kind of feedback from the app you would find better, please let us know".
 
 	\section*{Summary and Outlook}\label{sec:summary}
-		\lipsum[6] \cite{Dey2016} \cite{Nilsson2007} \cite{Poupyrev2002} \ac{AR} \ac{AR}
+		\cite{Dey2016} \cite{Nilsson2007} \cite{Poupyrev2002} \ac{AR} \ac{AR}
 
 	\pagebreak
 	\printbibliography
