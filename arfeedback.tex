@@ -114,13 +114,29 @@
 		%
 		% To move an object in Vivian-based apps, the user has to put his finger on the object, drag it, and let go of it in the desired spot. To cover greater distances, the user can move the device. Similarly, to rotate an object in Vivian, the user has to hold their finger on the object and rotate the device until they find the desired orientation.
 		%
-
-
 		Since one of the main goals of this study is to find suitable user feedback for augmented reality environments, it shall be further clarified what \ac{AR} means in the context of this study and which technologies were used during it. \ac{AR} itself is used to place 3D virtual objects into a 3D real environment in real time. In our study we used three different mobile phones which are running our applications. At runtime the recorded imagery of the phone is being augmented and shown to the user, to display a mix of virtual objects and the real world.
 
 		For the design of the prototypes we used Unity3D as well as Blender. The functionalities of the prototypes have been implemented using the Vivian Framework which can be used to evaluate the usability of virtual prototypes. This is done by first modeling the virtual prototype and then modeling one or more state-machines to define the prototypes functionality.
 
 		To evaluate the different types of feedback, we decided to use usability testing as a tool to quantify the corresponding results. Therefore we chose to have the users fill out a \ac{SUS} questionnaire which we tailored to fit our needs. The basic \ac{SUS} consists of ten questions regarding a systems usability. We added a few questions which target the feedback more as well as an open feedback field, where the participants are able to share their thoughts on the system with us.
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=.32\textwidth]{img/messages/phonepz1.png}
+			\includegraphics[width=.32\textwidth]{img/messages/phonepz2.png}
+			\includegraphics[width=.32\textwidth]{img/messages/phonepz3.png}
+			\begin{subfigure}[t]{.32\textwidth}\centering
+				\textbf{(A)}
+			\end{subfigure}
+			\begin{subfigure}[t]{.32\textwidth}\centering
+				\textbf{(B)}
+			\end{subfigure}
+			\begin{subfigure}[t]{.32\textwidth}\centering
+				\textbf{(C)}
+			\end{subfigure}
+			\caption{Three screenshots of an app made with the Vivian framework}
+			\label{fig:feedbackonphone}
+		\end{figure}
 
 	\section*{Related Work}\label{sec:relatedwork}
 		% Papers (as to be found in *.bib):
@@ -139,51 +155,27 @@
 		% Describe feedback messages (size, color, content, duration) for each implementation <- graphics
 		% Why these messages?
 		% maybe a nice reference table for that too
-		In order to find feedback in response to incorrect usage of an \ac{AR} application, we have to define what kinds of gestures we consider incorrect in the first place. The user interface provided by the Vivian framework is based on one finger inputs (see \nameref{sec:foundations}), therefore we should take into consideration each input that is not done with a single finger. Prominent examples for multiple finger gestures are the \emph{pinch zoom} and the \emph{two finger rotation}. The pinch zoom is a gesture in which two fingers are placed on the touch screen and moved apart in opposite directions. The two finger rotation is a gesture in which two fingers are placed on the touch screen and are moved clockwise or counterclockwise about the center of the positions of the fingers. Common misconceptions by inexperienced \ac{AR} users might include using said pinch zoom to either zoom in on objects or to bring them closer, or using two finger rotation to rotate objects.
+		In order to find feedback in response to incorrect usage of an \ac{AR} application, we have to define what kinds of gestures we consider incorrect in the first place. The user interface provided by the Vivian framework is based on one finger inputs (see \nameref{sec:foundations}), therefore we should take into consideration each input that is not done with a single finger. Prominent examples for multiple finger gestures are the \emph{pinch zoom} and the \emph{two finger rotation}. The pinch zoom is a gesture in which two fingers are placed on the touch screen and moved apart in opposite directions. The two finger rotation is a gesture in which two fingers are placed on the touch screen also and are moved clockwise or counterclockwise about the center of the positions of the fingers. Common misconceptions by inexperienced \ac{AR} users might include using said pinch zoom to either zoom in on objects or to bring them closer, or using two finger rotation to rotate objects.
 
-		\begin{figure}[H]
-			\vspace{1em}
-
-			\begin{subfigure}[t]{.32\textwidth}\centering
-				\textbf{Implementation 1}\\
-				limiting
-			\end{subfigure}
-			\begin{subfigure}[t]{.32\textwidth}\centering
-				\textbf{Implementation 2}\\
-				limiting and supportive
-			\end{subfigure}
-			\begin{subfigure}[t]{.32\textwidth}\centering
-				\textbf{Implementation 3}\\
-				supportive and concise
-			\end{subfigure}
-			
-			\centering
-			\includegraphics[width=.32\textwidth]{img/messages/phonepz1.png}
-			\includegraphics[width=.32\textwidth]{img/messages/phonepz2.png}
-			\includegraphics[width=.32\textwidth]{img/messages/phonepz3.png}
-			\caption{The three different feedback messages in response to the example of pinch zooming.}
-			\label{fig:feedbackonphone}
-		\end{figure}
-
-		To make users quickly and easily understand the controls of Vivian-based apps, we extended the Vivian framework to provide three sets of feedback message implementations that differ in content, colors, size and duration. The content of the first feedback implementation is a \emph{critique}. If the user inputs a gesture that we consider incorrect, the app outputs a message that said input is not possible. For example, if a user tried pinch zooming, they would receive a message saying: "Pinch zooming is not possible". The content of the second feedback implementation is \emph{critique} and \emph{support}. The user is provided with a message stating that above mentioned input is not possible and hinting them towards what they should try instead. In the scope of the previous example, such a message would say: "Pinch zooming is not possible. Try moving around the object." In the first two implementations, the messages have the same size, color scheme and a duration of [X] seconds. The third implementation is more concise \emph{support}. For our previous example the exact message is saying: "Step closer to enlarge on-screen objects." It also differs in color scheme and size (see Figure \ref{fig:feedbackonphone}). It is displayed for [X] seconds.
+		To make users quickly and easily understand the controls of Vivian-based apps, we extended the Vivian framework to provide three feedback message implementations that differ in content, colors, size and duration. The content of the first feedback implementation is a \emph{critique}. If the user inputs a gesture that we consider incorrect, the app outputs a message that said input is not possible. For example, if a user tried pinch zooming, they would receive a message saying: "Pinch zooming is not possible". The content of the second feedback implementation is \emph{critique} and \emph{support}. The user is provided with a message stating that above mentioned input is not possible and hinting them towards what they should try instead. In the scope of the previous example, such a message would say: "Pinch zooming is not possible. Try moving around the object." In the first two implementations, the messages have the same size, color scheme and a duration of [X] seconds. The third implementation is more concise \emph{support}. For our previous example the exact message is saying: "Step closer to enlarge on-screen objects." It also differs in color scheme and size (see Figure \ref{fig:feedbackonphone}). It is displayed for [X] seconds.
 
 		\begin{center}
 			\begin{tabular}{|C{.05\textwidth}|L{.15\textwidth}|L{.23\textwidth}|L{.45\textwidth}|} \hline
-				Imp.					& Description 														& Gesture 									& Response 	\\ \hline
-				\multirow{2}{*}{\#1}	& \multirow{2}{*}{\parbox{.15\textwidth}{critique}}					& two finger rotation						& A			\\ \cline{3-4}
-										& 																	& pinch zoom								& B 		\\ \hline
-				\multirow{2}{*}{\#2}	& \multirow{2}{*}{\parbox{.15\textwidth}{combined}}		& two finger rotation						& C			\\ \cline{3-4}
-										& 																	& pinch zoom								& D 		\\ \hline
-				\multirow{3}{*}{\#3}	& \multirow{3}{*}{\parbox{.15\textwidth}{support}}		& two finger rotation (movable object)	& E			\\ \cline{3-4}
-										& 																	& two finger rotation (elsewhere)		& F 		\\ \cline{3-4}
-										&																	& pinch zoom 								& G 		\\ \hline
+										& \textbf{Description}												& \textbf{Gesture (input)} 					& \textbf{Response (output)} 											\\ \hline
+				\multirow{2}{*}{\#1}	& \multirow{2}{*}{\parbox{.15\textwidth}{critique}}					& two finger rotation						& Rotating the object is not possible.									\\ \cline{3-4}
+										& 																	& pinch zoom								& Zooming is not possible. 												\\ \hline
+				\multirow{2}{*}{\#2}	& \multirow{2}{*}{\parbox{.15\textwidth}{combined}}					& two finger rotation						& Rotating the object is not possible. Try moving around the object.	\\ \cline{3-4}
+										& 																	& pinch zoom								& Zooming is not possible. Try moving closer to the object.				\\ \hline
+				\multirow{3}{*}{\#3}	& \multirow{3}{*}{\parbox{.15\textwidth}{support}}					& two finger rotation (movable object)		& Hold the phone and move the object to rotate							\\ \cline{3-4}
+										& 																	& two finger rotation (elsewhere)			& Move around the objects												\\ \cline{3-4}
+										&																	& pinch zoom 								& Step closer to enlarge on-screen objects								\\ \hline
 			\end{tabular}
 			\captionof{table}{The responses for each input in each implementation.}
 			\label{tab:feedback}
 		\end{center}
 
 		The contents of each message can be found in Table \ref{tab:feedback}. The description column holds the names we assigned to the three different feedback implementations. In the gesture and response columns you can find the corresponding inputs and outputs respectively. If for example a user tried a two finger rotation, the app would display a message saying [X].
-		In the support implemenentation we made a distinction between two finger rotations on movable objects and elsewhere. If the aforementioned center point of the two finger rotation is placed on a movable object (see \nameref{sec:foundations}), the app displays the message that corresponds to "two finger rotation (movable object)". If not, the "two finger rotation (elsewhere)" message is displayed.
+		In the support implemenentation we made the distinction between two finger rotations on movable objects and elsewhere. If the aforementioned center point of the two finger rotation is placed on a movable object (see \nameref{sec:foundations}), the app displays the message that corresponds to "two finger rotation (movable object)". If not, the "two finger rotation (elsewhere)" message is displayed.
 
 	\section*{Case Study}\label{sec:casestudy}
 		% SETUP
@@ -246,7 +238,7 @@
 			
 			\begin{center}
 				\begin{tabular}{|C{.05\textwidth}|L{.41\textwidth}|L{.41\textwidth}|}
-					\hline \# & Microwave & Toaster \\
+					\hline \textbf{\#} & \textbf{Microwave} & \textbf{Toaster} \\
 					\hline 1 & Read serial number off the microwave & Read serial number off the toaster \\
 					\hline 2 & Heat up the cup & Toast the toast \\
 					\hline 3 & Remove the cup, put the pie in, set the timer to 20 seconds and remove the plate at 5 seconds & Toast the toast on high heat and put the toaster in unfreezing mode \\
