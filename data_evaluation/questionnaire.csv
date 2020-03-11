@@ -1,0 +1,41 @@
+phone,count,implementation,date,timestamp,issues,offscreen,1_Age,2_priorExp,3_SUS_1,4_SUS_2,5_SUS_3,6_SUS_4,7_SUS_5,8_SUS_6,9_SUS_7,10_SUS_8,11_SUS_9,12_SUS_10,13_open
+0,5,TM0,05.02.20,13:22,,0,23,1,2,2,3,2,2,1,2,3,3,2,Some kind of feedback about what I could try out when failing.
+0,3,TM1,05.02.20,12:48,,0,21,1,2,4,3,1,4,1,5,3,2,1,being able to rotate with two fingers would aid in a more flexible use; as well as more explicit labeling of the button function.
+0,4,TM2,05.02.20,13:04,,0,23,1,3,1,4,3,3,1,5,1,4,1,
+2,1,TM2,05.02.20,12:27,,0,18,0,3,2,4,2,1,2,5,2,3,3,
+1,3,MT0,05.02.20,14:14,,1,26,1,3,2,4,1,4,2,3,3,4,3,Explanations of options
+1,2,MT0,05.02.20,12:54,,1,20,0,4,2,4,4,4,3,5,3,4,2,
+0,6,MT1,05.02.20,14:22,,1,22,0,2,2,4,1,4,4,3,2,3,2,I think it would be easier to be able to turn the toast by moving it with two fingers instead of holding it with one and moving the camera.
+0,2,MT1,05.02.20,12:20,,1,18,0,1,2,3,2,4,1,4,2,2,1,I would prefer if it also gave me feedback an how to certain tasks.
+1,4,MT2,05.02.20,14:25,,0,19,1,4,2,3,2,4,1,3,3,3,2,The text / info should get shown longer.
+1,1,MT2,05.02.20,12:25,,0,20,1,3,2,2,4,3,3,4,2,2,1,Once I figured out that you can have to  twist the phone; it was a lot easier. So maybe a suggestion that you can twist the phone would be helpful.
+0,7,TM1,05.02.20,15:23,,1,28,1,2,3,2,4,4,2,4,4,1,1,Door-open button is hard to see.
+2,3,TM2,05.02.20,15:30,,0,24,0,2,2,3,2,4,2,4,3,3,1,
+1,6,MT2,05.02.20,16:05,,0,24,0,1,3,3,3,4,2,4,3,3,4,
+1,5,TM0,05.02.20,15:38,no screen for toaster – screens are there,1,23,1,2,3,3,2,4,1,4,2,4,1,Weird that the environment moves and not the toast
+1,7,MT1,05.02.20,16:20,,0,26,1,5,3,3,2,3,3,3,3,2,3,The app itself is very nice and the idea is very good. However; althrough the controls weren‘t essentially difficult; the way they were presented to someone that is not familiar with the features can be quite tricky. In my opinion; they could be more intuitive out of these details; great job!
+2,5,TM0,05.02.20,16:16,,0,22,1,3,2,4,2,3,2,5,3,4,1,Some text tips should be useful to get the ?algorithm? Of the particular AR app
+2,4,MT1,05.02.20,16:05,,1,23,0,5,1,5,1,5,1,5,1,5,1,It would be nice; if the app could recover from the user accidentally moving their hand in front of the camera (maybe generate an old state)
+0,8,MT0,05.02.20,16:05,,0,26,1,1,2,4,1,4,2,5,3,3,1,After a couple of misstries it would be nice to get a hint how to tilt the phone.
+0,9,MT1,05.02.20,16:14,Couple – not a big issue,0,27,1,4,3,4,4,5,1,4,1,4,1,loved the experience!!!
+0,11,TM2,05.02.20,19:36,,0,23,1,3,1,4,1,3,3,5,1,5,1,
+0,12,TM2,06.05.20,15:29,,0,46,1,2,1,4,2,4,1,4,1,4,1,
+2,8,MT0,15.02.20,14:35,,0,26,1,3,2,4,3,4,1,5,2,4,3,"It�s fun to play around with the app, but I needed a few seconds to get used to it."
+2,9,TM0,21.02.20,19:03,,1,28,1,3,2,2,1,4,1,5,2,4,1,Short notice how to use things in the app if someone is not able to use them properly.
+2,10,TM1,21.02.20,19:16,,0,22,0,2,2,4,1,3,2,5,2,4,2,Instructions in the beginning on how to handle the app / functions.
+0,13,MT0,13.02.20,17:05,,1,34,1,2,4,2,3,4,2,2,5,1,5,Some indication of how to rotate objects.
+2,11,TM3,28.02.20,18:16,,1,29,0,4,1,5,1,4,2,5,2,5,1,
+2,12,MT3,02.03.20,13:58,,1,22,1,4,2,3,2,4,1,2,2,4,2,When I attempted to rotate the helpful message was hidden by my fingers. Maybe place the message somewhere else.
+2,13,MT3,02.03.20,14:07,,0,23,1,4,4,3,1,5,1,4,2,2,1,Rotating the phone to rotate objects is very counterintuitive.
+2,14,TM3,02.03.20,14:15,,0,22,0,4,1,4,1,5,1,5,2,4,1,I did not know how to rotate objects so hints were really helpful
+2,15,TM3,03.03.20,11:17,,1,26,0,3,4,3,2,4,1,3,3,4,2,remove unnecessary complexities (Toast turning for example)
+2,16,MT3,03.03.20,18:47,,0,29,0,4,2,4,1,4,1,4,2,4,1,Integrate giving tasks in application; insert hints more central at the bottom; be consistent in object approach – either by movement of the phone or touchpad intuition.
+1,8,MT2,22.02.20,17:07:00,,0,28,0,2,2,4,2,4,2,4,2,4,4,"Sometimes the objects were moving, especially in mid-air beside the table."
+1,9,MT2,22.02.20,17:14:52,,0,27,1,2,2,4,1,4,1,5,1,5,1,Implementing rotation of objects with 2 fingers would be better.
+1,10,TM1,26.02.20,15:02:51,,0,29,0,4,2,4,3,5,2,5,1,5,3,
+1,11,TM1,27.02.20,15:15:13,,1,22,0,3,2,3,3,3,1,5,3,3,2,Improve touch sensibility
+1,12,TM0,05.03.20,17:00:00,,0,20,0,2,3,4,3,4,4,3,5,3,1,faster setting up
+2,17,TM3,04.03.20,15:16:00,,1,25,1,1,1,4,1,5,1,4,1,4,1,"Vibration feedback on some actions, hints on how to interact with objects seen"
+2,18,MT3,05.03.20,16:45:00,,1,26,0,2,2,5,4,3,2,3,2,3,3,
+2,19,MT3,05.03.20,16:56:00,,0,25,0,4,1,3,3,4,2,5,3,2,2,
+1,13,TM3,07.03.20,19:35:00,,1,23,0,5,4,2,4,3,4,1,5,2,4,
