@@ -1,0 +1,44 @@
+list of result graphs/data: 
+	appearances of incorrect usages,
+	task t2 times per implementation
+	tfr tries per implementation
+	welch t-test result (+ shapiros test result + effect size?)
+	correlation (scatter plot, correlation coef)
+	sus result: total score per implementation
+	open question appearances
+	open question topics
+
+'-': results
+'*': discussion
+
+
+- pinch zoom not fully evaluated
+	- initially the approach concentrated on pinch zoom and two finger rotations as incorrect usages.
+	- pinch zoom didn't appear often with our given case study setup
+		- numbers compared to numbers of tfr
+		* reasons for not appearance (rather big controls, start directly in front of the device)
+		* assumption: could be more useful for other applications and evaluations from the tfr should work the same for pz.
+
+- task t2 most evaluated bc it was the first appearance of the toast rotation, which triggered the tfr incorrect usage.
+	- 2 different measures are used (time to fulfill the task and # of tfrs)
+		- 0 tries not taken into account, bc users didn't received feedback msg
+		* some users can do it intuitively (but only 3 of 40)
+			* for most users a helpful feedback would be good
+		* imp3 seems to have a positive effect on the efficiency of users
+			* visible in time and tfr tries
+				* tfr even show a significant change (ref on welch t-test) 
+			* (Effect Size)
+
+- sus evaluation: total scores
+	* no correlation to other results, no big diffs between the groups
+	* seems like users feeling on usability depends on other factors. (prototype design usability, general criticism)
+
+- open questions
+	* evaluate what user feedback appeared
+	* take some details on user feedback (what can be taken from it? What fits to the other results?)
+
+
+tags for open question: feedback/help, control, prototype 
+
+outlook:
+- hand in front of camera
