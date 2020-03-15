@@ -92,16 +92,28 @@
 		% * "For validation of our approach we conducted a usability case study"
 		% * What will follow in the next sections
 		%
-		In recent years the number of available \ac{AR} applications has increased.
-		Although \ac{AR} technology is no novelty, it was not widely available for society until a wide variety of smartphones were capable of running \ac{AR} applications.
-		Since most users are newly discovering \ac{AR} technology, they don't know how to use its features yet, thus using unsupported gestures as input, which leads to frustration.
-		Our main motivation for conducting this research is the lack of good feedback in case of incorrect usage, which could help a lot of users to avoid repeating common mistakes.
-		Providing good feedback could also help teach users to control \ac{AR} applications without the need of a separate introduction.
+		% moar sauce
+		% https://www.statista.com/statistics/608967/mobile-ar-applications-installed-base-worldwide/
+		% https://medium.com/iquii/augmented-reality-the-growth-through-smartphones-and-apps-and-the-future-for-businesses-ecb7dc9b17df
+		%
 
-		Our research goal is to provide appropriate feedback to unsupported gestures and decide what type of textual feedback is better in comparison to other types. For validation of our approach we conducted a usability case study.
+		In recent years the number of available mobile \ac{AR} applications for smartphones 
+		has increased \cite{Tractica2017}. Although mobile \ac{AR} technology is no novelty, it was not widely available for 
+		society until a variety of smartphones were capable of running AR applications. Since most 
+		users are newly discovering \ac{AR} technology, they don't know how to use its features yet, thus using 
+		unsupported gestures as input, which leads to frustration. Our main motivation for conducting this 
+		research is the lack of good feedback in case of incorrect usage, which could help a lot of users to 
+		avoid repeating common mistakes while using \ac{AR} applications for smartphones. Providing good feedback 
+		could also help and teach users to control such \ac{AR} applications without the need of a separate introduction.
 
-		The organization of the paper is as follows. The section \nameref{sec:foundations} gives information about usability in general and the \ac{AR} environment we provide the feedback for. In the section \nameref{sec:relatedwork} we discuss similar work on \ac{AR} and feedback done in the past.
-		The \nameref{sec:approach} section gives a detailed illustration of the feedback we present to users. In the section \nameref{sec:casestudy}, we talk about the setup case study we conducted in order to validate our approach, followed by our results and the discussion thereof. Lastly, we summarize and conclude in the \nameref{sec:summary}. 
+		Our research goal is to provide appropriate feedback to unsupported gestures and decide
+		what type of textual feedback is the best. For validation of our approach we conducted a usability case study.
+
+		The organization of the paper is as follows. The section \nameref{sec:foundations} gives information about
+		usability in general and the \ac{AR} environment we provide the feedback for. In the section \nameref{sec:relatedwork} we discuss similar work on \ac{AR} and feedback done in the past. The \nameref{sec:approach} section
+		gives a detailed illustration of the feedback we present to users. In the section \nameref{sec:casestudy}, we
+		talk about the setup case study we conducted in order to validate our approach, followed by
+		our results and the discussion thereof. Lastly, we summarize and conclude in the \nameref{sec:summary}.
 
 	\section*{Foundations}\label{sec:foundations}
 		% * What is AR?
@@ -163,7 +175,7 @@
 		% maybe a nice reference table for that too
 		In order to find feedback in response to incorrect usage of a mobile \ac{AR} application, we have to define what kinds of gestures we consider incorrect in the first place. The user interface provided by the Vivian framework is based on one finger inputs (see \nameref{sec:foundations}), therefore we should take into consideration each input that is not done with a single finger. Prominent examples for multiple finger gestures are the \emph{pinch zoom} and the \emph{two finger rotation}. The pinch zoom is a gesture in which two fingers are placed on the touch screen and moved apart in opposite directions. The two finger rotation is a gesture in which two fingers are placed on the touch screen also and are together moved clockwise or counterclockwise about the center of the positions of the fingers. Common misconceptions by inexperienced mobile \ac{AR} users might include using said pinch zoom to either zoom in on objects or to bring them closer, or using two finger rotation to rotate objects.
 
-		To make users quickly and easily understand the controls of Vivian-based apps, we extended the Vivian framework to provide three feedback message implementations that differ in content, colors and size. The content of the first feedback implementation is a \emph{critique}. If the user inputs a gesture that we consider incorrect, the app outputs a message that said input is not possible. For example, if a user tried pinch zooming, they would receive a message saying: "Pinch zooming is not possible". The content of the second feedback implementation is \emph{critique} and \emph{support}. We therefore refer to this feedback type as \emph{combined} in the course of this paper. The user is provided with a message stating that above mentioned input is not possible and hinting them towards what they should try instead. In the scope of the previous example, such a message would say: "Pinch zooming is not possible. Try moving around the object." In the first two implementations, the messages have the same size and color scheme (see Figure \ref{fig:feedbackonphone}, A and B). The third implementation is more concise \emph{support}. For our previous example the exact message is saying: "Step closer to enlarge on-screen objects." It also differs in color scheme and size (see Figure \ref{fig:feedbackonphone}, C).
+		To make users quickly and easily understand the controls of Vivian-based apps, we extended the Vivian framework to provide three feedback message implementations that differ in content, colors and size. The content of the first feedback implementation is a \emph{critique}. If the user inputs a gesture that we consider incorrect, the app outputs a message that said input is not possible. For example, if a user tried pinch zooming, they would receive a message saying: "Pinch zooming is not possible". The content of the second feedback implementation is \emph{critique} and \emph{support}. We therefore refer to this feedback type as \emph{combined} in the course of this paper. The user is provided with a message stating that above mentioned input is not possible and hinting them towards what they should try instead. In the scope of the previous example, such a message would say: "Pinch zooming is not possible. Try moving around the object." In the first two implementations, the messages have the same size and color scheme (see Figure \ref{fig:feedbackonphone}, A and B). The third implementation is more concise \emph{support}. For our previous example the exact message is saying: "Step closer to enlarge on-screen objects." It also differs in color scheme and size (see Figure \ref{fig:feedbackonphone}, C). Each feedback message in every implementation is displayed for 5 seconds.
 
 		\begin{center}
 			\begin{tabular}{|C{.05\textwidth}|L{.15\textwidth}|L{.23\textwidth}|L{.45\textwidth}|} \hline
