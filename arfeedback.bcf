@@ -2186,12 +2186,9 @@
     <bcf:citekey order="2">Wang2002</bcf:citekey>
     <bcf:citekey order="3">Nielsen2012</bcf:citekey>
     <bcf:citekey order="4">Moran2019</bcf:citekey>
-    <bcf:citekey order="5">Microsoft</bcf:citekey>
+    <bcf:citekey order="5">Microsoft2018</bcf:citekey>
     <bcf:citekey order="6">Nielsen2001</bcf:citekey>
-    <bcf:citekey order="7">IEEE2002</bcf:citekey>
-    <bcf:citekey order="8">Dey2016</bcf:citekey>
-    <bcf:citekey order="9">Nilsson2007</bcf:citekey>
-    <bcf:citekey order="10">Poupyrev2002</bcf:citekey>
+    <bcf:citekey order="7">Poupyrev2002</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
