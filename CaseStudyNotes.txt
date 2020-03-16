@@ -40,5 +40,17 @@ list of result graphs/data:
 
 tags for open question: feedback/help, control, prototype 
 
+* why do pinch zooms not appear often?
+* why is t2 most demanding?
+* why does tfr appear often?
+* explaination of huge std
+* pinch zoom in t2 came bc users tried everything to solve
+* low number of users without incorrect usage
+* result: 3 is best why? why aren't the others?
+* open question answers not directed to the question
+
+
+
+
 outlook:
 - hand in front of camera
