@@ -18,6 +18,7 @@
 
 \usepackage{lipsum}
 
+\usepackage{textcomp} % supress warning
 \usepackage{gensymb} % added by Steffen
 
 
@@ -34,7 +35,7 @@
 \newcommand{\runninghead}{Feedback for Augmented Reality}
 \newcommand{\myauthor}{Julian Lüken, Mehmed Mustafa, Jan Schneider,\\ Steffen Tunkel, Chris Warin}
 \newcommand{\myuni}{Georg-August University, Göttingen}
-\newcommand{\titlespace}{1em}
+\newcommand{\titlespace}{.9em}
 
 % Header
 \markright{\uppercase{\runninghead}\hfill}
@@ -55,16 +56,14 @@
 			\begin{doublespace}\huge\textbf{\mytitle}\normalsize\\[\titlespace]\end{doublespace}
 			\textsc{\myauthor}\\[\titlespace]
 			\today\\[\titlespace]
-			\myuni\\[\titlespace]
+			\myuni
 		\end{minipage}
 	\end{center}
-	\vspace{\titlespace}
+	\vspace{0em}
 	\begin{myabstract}
 		% Abstract goes here
-		\lipsum[1-3]
+		\lipsum[1-2]
 	\end{myabstract}
-	\newgeometry{left=25mm,right=25mm,top=30mm,bottom=30mm}
-	\pagestyle{myheadings}
 
 	% REMEMBER
 	%
@@ -116,15 +115,10 @@
 		talk about the setup case study we conducted in order to validate our approach, followed by
 		our results and the discussion thereof. Lastly, we summarize and conclude in the \nameref{sec:summary}.
 
+	\pagestyle{myheadings}
 	\section*{Foundations}\label{sec:foundations}
 		% * What is AR?
 		Since the main goal of our work presented in this paper is to find suitable user feedback for augmented reality environments, we will further clarify what \ac{AR} means and which technologies we used. \ac{AR} itself describes a variety of technologies that place 3D virtual objects into a 3D real environment in real time, for example via a handheld device like a mobile phone (mobile \ac{AR}) or using wearable goggles like the Microsoft HoloLens. In this paper we focus on \ac{AR} for mobile phones, where recorded imagery of the phone is being augmented and shown to the user to display a mix of virtual objects and the real world at runtime.
-
-
-		% * Which frameworks/technologies were used?
-		% 	* Brief info about Vivian (which relies on state machines)
-		% 		* What gestures are "correct"? (vivian relies on 1 finger shit and moving environment)
-		A virtual prototype is a \textit{"\textnormal{[…]} computer simulation of a physical product that can be presented, analyzed, and tested from concerned product life-cycle aspects such as design/engineering, manufacturing, service, and recycling as if on a real physical model."}\cite{Wang2002}. The Vivian framework is an extension for Unity3D, that can be used to create mobile \ac{AR} implementations of prototypes using a 3D model and one or more finite-state machines. (sauce?)
 
 		\begin{figure}[H]
 			\centering
@@ -143,6 +137,11 @@
 			\caption{Three screenshots of an app made with the Vivian framework}
 			\label{fig:feedbackonphone}
 		\end{figure}
+
+		% * Which frameworks/technologies were used?
+		% 	* Brief info about Vivian (which relies on state machines)
+		% 		* What gestures are "correct"? (vivian relies on 1 finger shit and moving environment)
+		A virtual prototype is a \textit{"\textnormal{[…]} computer simulation of a physical product that can be presented, analyzed, and tested from concerned product life-cycle aspects such as design/engineering, manufacturing, service, and recycling as if on a real physical model."}\cite{Wang2002}. The Vivian framework is an extension for Unity3D, that can be used to create mobile \ac{AR} implementations of prototypes using a 3D model and one or more finite-state machines. (sauce?)
 
 		In a mobile app made with the Vivian framework, all user input relies on one finger gestures on the touch screen. In the example in Figure \ref{fig:feedbackonphone} (A and B) we can observe a 3D model of a toaster projected onto a live video of a real world scenario using Vivian. The user can interact with the different 3D models on the screen. Buttons can be pressed by simply tapping the screen where the respective button is displayed. Knobs and levers can be moved by putting a finger on the screen where the knob or lever is displayed, moving the finger on the screen until finding the desired position, and removing the finger from the screen afterwards. We refer to this gesture as \emph{drag-and-drop}. The Vivian framework makes a clear distinction between movable and non-movable objects in a scene. The slice of bread in the aforementioned example is movable, whereas the toaster itself cannot be moved. Movable objects can be moved in the same fashion as a lever. To cover greater distances, one can move the device itself while dragging the object. Rotation similarly requires the user to hold their finger on the object and rotate the device until they find the desired orientation. The limit of one-finger-interactions exists due to the peculiarity of \ac{AR} environments where two-finger-interactions (like a pinch zoom or a two-finger-rotation) would be contradicting with the intended design of such an environment. If one wants to take a closer look at the previously mentioned toaster for example the user would need to step closer to the toaster.
 		% * What is Usability(-testing)?
