@@ -279,23 +279,34 @@
 				\label{fig:scatter}
 			\end{figure}
 
-			For the evaluation of the questionnaire, we calculated the \ac{SUS} scores for every participant. Figure \ref{fig:sus} shows the scores mean for each implementation. The horizontal red line is at a score of 68, which in terms of \ac{SUS} stands for average usability (see \nameref{sec:foundations}).
+			For the evaluation of the questionnaire, we calculated the \ac{SUS} scores for every participant. Figure \ref{fig:sus} shows the scores mean for each case study group. The horizontal red line is at a score of 68, which in terms of \ac{SUS} stands for average usability (see \nameref{sec:foundations}).
 
 			\begin{figure}[H]
 				\centering
 				\includegraphics[width=.49\textwidth]{img/plot/plot_sus.pdf}
-				\caption{DUMMY: SUS score for different implementations.}
+				\caption{SUS score by the case study groups.}
 				\label{fig:sus}
 			\end{figure}
 
-			24 of the 40 participants answered the open question (\emph{"If you have any suggestions on what kind of feedback from the app you would find better, please let us know"}). We categorize the answers with four different labels, divided by the topic the answer is about. These are \emph{app feedback}, \emph{app controls}, \emph{prototype design} and \emph{other}. The appearances of the different types of answers are listed in Figure \ref{fig:tags}. In case an answer fit to multiple labels, we counted it for all the fitting categories. In addition to the type of answer, we also take the implementation the participant tested and the specific text into account. [not done]
+			24 of the 40 participants answered the open question (\emph{"If you have any suggestions on what kind of feedback from the app you would find better, please let us know"}). We categorize the answers with four different labels, divided by the topic the answer is about. These are \emph{app feedback}, \emph{app controls}, \emph{prototype design} and \emph{other}. Answers in the \emph{app feedback} category are directed to the provided feedback messages or other desired feedback. Answers in the \emph{app controls} category are about struggles with or improvement ideas for the applications controls. The \emph{prototype} category is related to the prototype design and its usability, for example button sizes. The last category, \emph{other}, is summing up single appearing answers which scope is not relevant for this research. The appearances of the different types of answers are listed in Figure \ref{fig:tags}. In case an answer fit to multiple labels, we count it for all the fitting categories.
 
 			\begin{figure}[H]
 				\centering
 				\includegraphics[width=.49\textwidth]{img/plot/plot_tags.pdf}
-				\caption{DUMMY: Amount of open question answers categorized by labels.}
+				\caption{Categorized open question answers.}
 				\label{fig:tags}
 			\end{figure}
+			
+			For a deeper evaluation of the answers we split them by the case study groups (see Figure \ref{fig:tags_imp}). 
+			Most of the answers related to \emph{app feedback} came from participants in the control group. All of this answers were asking for any kind of help. A lot directly asked for text messages providing help. Also the ideas of a help button or an introduction, which explains the controls were mentioned. Participants in the other groups also mentioned additional help implementation methods, like vibration feedback or help for the specific task from the application. Answers directed to our feedback message implementations were that they could be hidden by the fingers, when the user turns the phone and a participant with the \emph{combined} feedback mentioned that the message should be visible for a longer duration. The other big category of the participants' answers is \emph{app control} related. They have in common that the rotation of the piece of bread in the second task for the toaster prototype was not easy to archive for them. Also some were mentioning that the two finger rotation could be the more intuitive option.
+
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=.49\textwidth]{img/plot/plot_tags_implementations.pdf}
+				\caption{Appearances of answer categories by the participants case study groups.}
+				\label{fig:tags_imp}
+			\end{figure}
+
 
 		\subsection*{Discussion of the Case Study Results}\label{ssec:discussion}
 			% discussion of the results in the previous section
@@ -313,18 +324,20 @@
 
 			The feedback versions we provided performed differently in the case study. While the implementation with \emph{critique} feedback and the implementation with \emph{combined} feedback did not had a significant effect, the users with the \emph{support} feedback were able to fulfill the task in less time and with significantly less attempts of the incorrect two finger rotation gestures. Prior knowledge about the usage of \ac{AR} applications can not be a reason for it, because this group had the lowest percentage of prior knowledge. Instead we can assume multiple reasons for this difference. First of all the \emph{support} feedback implementation has a better visibility than the other two (see \ref{fig:feedbackonphone}). While the other two implementations provide messages looking like the typical Android pop-up messages, the \emph{support} feedback messages are larger and orange instead of gray. That is why there are more eye-catching for the users. This matches with our observation during the test that some of the participants with the \emph{critique} or \emph{combined} ignored the messages. The other difference is the helpfulness of the messages' content. The \emph{critique} feedback just tells the users what they have done incorrect, but not how they do it correctly. Since the actual rotation gesture was not intuitive for most participants, they could not come up with the right idea for rotation easily themselves. Our \emph{combined} feedback implementation has a similar issue. The message popping for any kind of rotation is \emph{"Rotating the object is not possible. Try moving around the object."}. This message does not provide the right help for the most challenging task, which is the rotation of the piece of bread, because it is designed for the wrong kind of rotation. The \emph{support} feedback message serves better with \emph{"Hold the object and move the phone to rotate."}.
 
-			
+			% missing: msg of 3 are shown longer
 			% how does sus fit to the results and why?
 				% other factors
 			% what can we gain from the open questions?
 
 
-			%ideas for Outlook:
+			%Ideas for Outlook (not ordered):
 			% like implementation 3 is good
 			% visibility v helpfulness
 			% What was the reason? better visibility or better content?
 			% another case study for other wrong usages.
 			% Hand in front of camera issue
+			% introduction instead? 
+			% more intuitive rotation implementation?
 
 
 
