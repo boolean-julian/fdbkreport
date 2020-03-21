@@ -194,6 +194,7 @@
 		%- mentioned Vivian Framework, where should it be exactly?
 		%- time tenses
 		%- all p-values should be given (statistics)
+		
 		To evaluate the quality of our feedback implementations we conducted a case study in the domain of usability engineering, which is presented in this section. In the section "\nameref{ssec:setup}", we describe in detail what each participant in the case study had to do and what data we collected. The results of the study are found in \nameref{ssec:results} and afterwards discussed in \nameref{ssec:discussion}.
 		
 		\subsection*{Setup of the Case Study}\label{ssec:setup}
@@ -224,8 +225,7 @@
 			Following the test of the application, the participants were asked to fill in a questionnaire. This questionnaire consists of 3 parts. First we asked participants if they had used \ac{AR} applications before. The second part is an \ac{SUS} (see \nameref{sec:foundations}) about the usability of the \ac{AR} application, that we tailored for our needs. The third part is an open question directly aimed to the feedback provided by the application, namely: \emph{"If you have any suggestions on what kind of feedback from the app you would find better, please let us know"}.
 
 		\subsection*{Results of the Case Study}\label{ssec:results}
-			% only pure results and graphics
-			% shall provide base for discussion
+
 			We conducted the case study with 10 participants per feedback group. This leads to 40 people participating in the case study in total. The smallest subgroups, defined by implementation and task order, were still filled with 5 participants. 21 of the 40 participants said they had prior experience with \ac{AR} applications. The group with the highest prior knowledge was the control group with 7 of 10 participants. The groups for the \emph{critique} feedback and the \emph{combined} feedback both had 6 participants with prior knowledge, while the group with the \emph{support} feedback had just 2 participants, who said they had prior knowledge.
 
 			In our approach, we consider especially two gestures as incorrect usage: the pinch zoom and the two finger rotation (see \nameref{sec:approach}). With the setup of our case study, the two finger rotation appeared more often than the pinch zoom gesture. Figure \ref{fig:tfr_v_pz} shows the appearances of two finger rotations and pinch zooms for all tasks given to the participants in the case study. In total over all participants and all tasks, two finger rotations appeared 225 times, while pinch zoom appeared 51 times. Since 82\% of the incorrect usages are two finger rotations, the results of our case study focus on those. We especially evaluate the second task for the toaster, since it was most demanding for the users. As shown in Figure \ref{fig:tfr_v_pz} A, 91\% of the overall two finger rotations occurred in that task. Also the majority of pinch zoom gestures occurred there.
@@ -323,12 +323,8 @@
 
 			The feedback versions we provided performed differently in the case study. While the implementation with \emph{critique} feedback and the implementation with \emph{combined} feedback did not had a significant effect, the users with the \emph{support} feedback were able to fulfill the task in less time and with significantly less attempts of the incorrect two finger rotation gestures. Prior knowledge about the usage of \ac{AR} applications can not be a reason for it, because this groups participants had the lowest percentage of prior knowledge. Instead we can assume multiple reasons for this difference. One is that the \emph{support} feedback implementation has a better visibility than the other two (see \ref{fig:feedbackonphone}). While the other two implementations provide messages looking like the typical Android pop-up messages, the \emph{support} feedback messages are larger and have a orange color instead of gray. Additional the messages of this implementation are shown for a longer duration. All this changes are there to make the messages more eye-catching for the users. This matches with our observation during the test that some of the participants with the \emph{critique} or \emph{combined} ignored the messages, which did not happen for participants with the \emph{support} feedback. The other difference is the helpfulness of the messages' content. The \emph{critique} feedback just tells the users what they have done incorrect, but not how they do it correctly. Since the actual rotation gesture was not intuitive for most participants, they could not come up with the right idea for rotation easily themselves. Our \emph{combined} feedback implementation has a similar issue. The message popping for any kind of rotation is \emph{"Rotating the object is not possible. Try moving around the object."}. This message does not provide the right help for the most challenging task, which is the rotation of the piece of bread, because it is designed for the wrong kind of rotation. The \emph{support} feedback message serves better with \emph{"Hold the object and move the phone to rotate"}, because its specific enough to help in the given situation.			
 			
-			Our data states that participants perform significantly better with the \emph{support} feedback implementation, but we also asked the participants to assess their experience with our \ac{AR} application themselves. Figure \ref{fig:sus} shows that the average \ac{SUS} result of participants in case study group 3 with the \emph{support} implementation is only slightly higher then the others. So the impact on how the participants feel the usability is not as strong as the impact on how they actually perform. We asked the participants to assess the usability of the overall AR application, since that is what the feedback should serve to. Unfortunately other aspects have an impact on the general experience too. [So also the usability of the prototype itself was also rated by users], which makes sense because we tested the usability of our feedback with the use of the prototypes. That is why our case study groups are too small to evaluate the \ac{SUS} results.
-
-
-			% how does sus fit to the results and why?
-				% other factors
-			% what can we gain from the open questions?
+			Our data states that participants perform significantly better with the \emph{support} feedback implementation, but we also asked the participants to assess their experience with our \ac{AR} application themselves. Figure \ref{fig:sus} shows that the average \ac{SUS} result of participants in case study group 3 with the \emph{support} implementation is only slightly higher then the others. So the impact on how the participants feel the usability is not as strong as the impact on how they actually perform. We asked the participants to assess the usability of the overall AR application, since that is what the feedback messages should serve to. Unfortunately other aspects have an impact on the general experience too. Also the users strongly rated the usability of the prototype itself, because we tested the usability of our feedback with the use of the prototypes. That is why our case study groups are too small to evaluate the \ac{SUS} results. The answers to the open question fit to this impression. We asked them to give us opinions directly on the feedback the application provided or did not provide, in case of the control group. Still almost as many participants reacted to the app usage (\emph{app controls}) as to the \emph{app feedback} as shown in Figure \ref{fig:tags}.
+			
 
 
 			%Ideas for Outlook (not ordered):
@@ -340,14 +336,6 @@
 			% introduction instead? 
 			% more intuitive rotation implementation?
 
-
-
-
-
-
-
-
-			[a lot is missing here]
 
 	\section*{Summary and Outlook}\label{sec:summary}
 		\lipsum[2-3]
