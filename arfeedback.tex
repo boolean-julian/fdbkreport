@@ -62,7 +62,7 @@
 	\vspace{0em}
 	\begin{myabstract}
 		% Abstract goes here
-		\lipsum[1-2]
+		Mobile \ac{AR} applications have gained in importance over the years. Although they provide a variety of uses, they remain mostly unknown by the public, which results in poor understanding of the controls and features. Our research goal is to find out how to react to incorrect \ac{AR} usage in order to enhance the usability of mobile \ac{AR} applications. For this purpose, we created three generic textual feedback implementations for \ac{AR} applications with different content. In order to assess the potential gain in usability provided by these feedback messages, we conducted a case study with two interactive prototypes. Each combination of prototype and feedback implementation was considered and each of the 40 participants had to complete the same set of tasks. We found that, given appropriate feedback, most people still use incorrect gestures, but quickly recover from mistakes and are much less likely to do them more often.
 	\end{myabstract}
 
 	% REMEMBER
@@ -97,28 +97,11 @@
 		% https://medium.com/iquii/augmented-reality-the-growth-through-smartphones-and-apps-and-the-future-for-businesses-ecb7dc9b17df
 		%
 
-		In recent years, the number of available mobile \ac{AR} applications for smartphones
-		has increased \cite{Tractica2017}. Although mobile \ac{AR} technology is no novelty, it was not widely
-		available for {public until most smartphones became} capable of running \ac{AR} applications.
-		Since most users are newly discovering \ac{AR} technology, they {do not} know how to use its features
-		yet, thus using unsupported gestures as {inputs}, which leads to frustration. Our main motivation
-		for conducting this research is the lack of good feedback in case of incorrect usage, which could
-		help a lot of users to avoid repeating common mistakes while using \ac{AR} applications for smartphones.
-		Providing good feedback could also help and teach users to control such \ac{AR} applications
-		without the need of a separate introduction.
+		In recent years, the number of available mobile \ac{AR} applications for smartphones has increased \cite{Tractica2017}. Although mobile \ac{AR} technology is no novelty, it was not widely available for {public until most smartphones became} capable of running \ac{AR} applications. Since most users are newly discovering \ac{AR} technology, they {do not} know how to use its features yet, thus using unsupported gestures as {inputs}, which leads to frustration. Our main motivation for conducting this research is the lack of good feedback in case of incorrect usage, which could help a lot of users to avoid repeating common mistakes while using \ac{AR} applications for smartphones. Providing good feedback could also help and teach users to control such \ac{AR} applications without the need of a separate introduction.
 
-		Our research goal is to provide appropriate feedback to unsupported gestures and decide
-		what type of textual feedback is the best. {For validation of our approach we conducted a
-		usability case study by using \ac{AR} prototypes of technical devices. Test subjects were divided 
-		into groups and they had to complete several tasks with the prototypes. Different kind of 
-		feedbacks were provided to them according to their group.}
+		Our research goal is to provide appropriate feedback to unsupported gestures and decide what type of textual feedback is the best. {For validation of our approach we conducted a usability case study by using \ac{AR} prototypes of technical devices. Test subjects were divided into groups and they had to complete several tasks with the prototypes. Different kind of  feedbacks were provided to them according to their group.}
 
-		The organization of the paper is as follows. The section \nameref{sec:foundations} gives information about
-		usability in general and the \ac{AR} environment we provide the feedback for. In the section \nameref{sec:relatedwork} we discuss similar work on \ac{AR} and feedback done in the past. The \nameref{sec:approach} section
-		gives a detailed illustration of the feedback we present to users. In the section \nameref{sec:casestudy}, we
-		talk about the setup case study we conducted in order to validate our approach, followed by
-		our results and the discussion thereof. Lastly, we summarize and conclude in the \nameref{sec:summary} and
-		Outlook.
+		The organization of the paper is as follows. The section \nameref{sec:foundations} gives information about usability in general and the \ac{AR} environment we provide the feedback for. In the section \nameref{sec:relatedwork} we discuss similar work on \ac{AR} and feedback done in the past. The \nameref{sec:approach} section gives a detailed illustration of the feedback we present to users. In the section \nameref{sec:casestudy}, we talk about the setup case study we conducted in order to validate our approach, followed by our results and the discussion thereof. Lastly, we summarize and conclude in the \nameref{sec:summary}.
 
 
 	\pagestyle{myheadings}
@@ -362,7 +345,7 @@
 		
 		In our work, we focused on the pinch-zoom and the two-finger rotation, which are incorrect input gestures described in \nameref{ssec:incorrectinput} and therefore not supported by Vivian. According to our findings, users are inclined to use two-finger rotations when they are confronted with a task in which they have to rotate an object in order to complete it. Our results support that appropriate feedback does indeed help users complete such tasks in less time. In our case study, users with appropriate, supportive feedback were completing the first rotation task twice as fast as users without any feedback. Moreover, during the completion of tasks, the number of incorrect gestures for each user with appropriate feedback was three to four times smaller in comparison to the number of incorrect gestures for each user without feedback. Pinch-zoom gestures however were not widely used by our participants, which is most likely due to our test setup (see \nameref{ssec:discussion}). The feedback type that we found most effective among the ones we implemented in the course of our case study is the supportive one. The exact content of the messages can be reviewed in \nameref{ssec:feedbackmsgs}. The messages in that implementation are not only more accurate, they are also provided with the brightest colors and biggest font.
 
-		Pinch-zoom gestures are not yet taken into account by our case study setup, which makes it impossible to evaluate the feedback implementation we developed in the scope of this gesture. Further we noticed <X> of our 40 participants were trying to interact with on-screen objects by moving their hand in front of the camera lens of the mobile device instead of using the built-in touch screen. Since our results look promising, we will conduct another case study in the future, where we consider these observations in the case study setup. We will also consider other feedback types with different visibility and content, to discover whether the effect we found is due to one or another.
+		Pinch-zoom gestures are not yet taken into account by our case study setup, which makes it impossible to evaluate the feedback implementation we developed in the scope of this gesture. Further we noticed 17 of our 40 participants were trying to interact with on-screen objects by moving their hand in front of the camera lens of the mobile device instead of using the built-in touch screen. Since our results look promising, we will conduct another case study in the future, where we consider these observations in the case study setup. We will also consider other feedback types with different visibility and content, to discover whether the effect we found is due to one or another.
 
 	\pagebreak
 	\printbibliography
