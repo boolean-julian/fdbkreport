@@ -260,19 +260,19 @@
 
 			\begin{center}
 				\begin{tabular}{|L{.22\textwidth}|L{.22\textwidth}|C{.22\textwidth}|C{.22\textwidth}|} \hline
-					\textbf{statistical test}		& \textbf{implementation}	& \textbf{p-values: two finger rotation} 		& \textbf{p-values: time} 											\\ \hline
-					\multirow{3}{*}{Shapiro-Wilk}	& critique					& 0.001							& 0.972								\\ \cline{2-4}
-													& combined					& 0.420							& 0.029 								\\ \cline{2-4}
-													& support					& 0.971							& 0.507								\\ \hline
-					\multirow{3}{*}{Welch t-test}	& critique					& -								& 0.980								\\ \cline{2-4}
-													& combined					& 0.681							& -									\\ \cline{2-4}
-													& support					& 0.010							& 0.054 									\\ \hline
+					\textbf{statistical test}		& \textbf{implementation}	& \textbf{p-values: time} 		& \textbf{p-values: two finger rotation} 											\\ \hline
+					\multirow{3}{*}{Shapiro-Wilk}	& critique					& 0.972							& 0.001								\\ \cline{2-4}
+													& combined					& 0.029							& 0.420 								\\ \cline{2-4}
+													& support					& 0.507							& 0.971								\\ \hline
+					\multirow{3}{*}{Welch t-test}	& critique					& 0.980							& -								\\ \cline{2-4}
+													& combined					& - 							& 0.681									\\ \cline{2-4}
+													& support					& 0.054							& 0.010 									\\ \hline
 				\end{tabular}
 				\captionof{table}{p-values of statistical tests for the time needed to fulfill the 2nd task for the toaster prototype and the two finger rotation attempts in that task.}
 				\label{tab:pvalues}
 			\end{center}
 
-			In addition, we evaluated the relationship between our two metrics for the task. The correlation coefficient between the time and the attempts of two finger rotation is 0.43, which indicates a moderate positive relationship between the metrics. Figure \ref{fig:scatter} visualizes the relationship between the time needed for the task and the number of two finger rotation tries. The color of a data point is set by the implementation used by this participant. One can observe that the participants with implementation 3 are all clustered with a low time and a low amount of two finger rotations, while all other groups are more randomly spread.
+			In addition, we evaluated the relationship between our two metrics for the task. The correlation coefficient between the time and the attempts of two finger rotation is 0.43, which indicates a moderate positive relationship between the metrics. Figure \ref{fig:scatter} visualizes the relationship between the time needed for the task and the number of two finger rotation tries. The color of a data point is set by the implementation used by this participant. One can observe that the participants with implementation 3, which are shown by the red data points, are all clustered with a low time and a low amount of two finger rotations, while all other groups are more randomly spread.
 
 			\begin{figure}[H]
 				\centering
@@ -300,7 +300,7 @@
 			\end{figure}
 			
 			For a deeper evaluation of the answers we split them by the case study groups (see Figure \ref{fig:tags_imp}). 
-			Most of the answers related to \emph{app feedback} came from participants in the control group. All of this answers were asking for any kind of help. A lot directly asked for text messages providing help. Also the ideas of a help button or an introduction, which explains the controls were mentioned. Participants in the other groups also mentioned additional help implementation methods, like vibration feedback or help for the specific task from the application. Answers directed to our feedback message implementations were that they could be hidden by the fingers, when the user turns the phone and a participant with the \emph{combined} feedback mentioned that the message should be visible for a longer duration. The other big category of the participants' answers is \emph{app control} related. They have in common that the rotation of the piece of bread in the second task for the toaster prototype was not easy to archive for them. Also some were mentioning that the two finger rotation could be the more intuitive option.
+			Most of the answers related to \emph{app feedback} came from participants in the control group. All of this answers were asking for any kind of help. Two of them directly asked for text messages providing help. Also the ideas of a help button or an introduction, which explains the controls were mentioned. Participants in the other groups also mentioned additional help implementation methods, like vibration feedback or help for the specific task from the application. Answers directed to our feedback message implementations were that they could be hidden by the fingers, when the user turns the phone and one participant with the \emph{combined} feedback mentioned that the message should be visible for a longer duration. The other big category of the participants' answers is \emph{app control} related. They have in common that the rotation of the piece of bread in the second task for the toaster prototype was not easy to archive for them. Also some were mentioning that the two finger rotation could be the more intuitive option.
 
 			\begin{figure}[H]
 				\centering
