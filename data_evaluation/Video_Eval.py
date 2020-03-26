@@ -4,8 +4,8 @@
 # In[3]:
 
 
-get_ipython().system(' pip install -U seaborn')
-get_ipython().system(' pip install researchpy')
+#get_ipython().system(' pip install -U seaborn')
+#get_ipython().system(' pip install researchpy')
 
 import pandas as pd
 import numpy as np
@@ -15,11 +15,12 @@ import seaborn as sns
 import researchpy as rp
 from scipy import stats
 
-#plt.rcParams.update({'font.size': 14})
-rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
 ## for Palatino and other serif fonts use:
 #rc('font',**{'family':'serif','serif':['Palatino']})
 rc('text', usetex=True)
+rc('font',**{'family':'serif'})
+plt.rcParams.update({'font.size': 14})
+
 
 #sns.set()
 print("seaborn version: ", sns.__version__)
@@ -45,7 +46,7 @@ print('shape', df.shape)
 #plt.title('DUMMY: Percentage of prior Experience')
 #plt.grid('on')
 #plt.savefig('plot_prior.pdf')
-#plt.show()
+# 
 #
 
 
@@ -60,14 +61,14 @@ print('shape', df.shape)
 #plt.title('DUMMY: timings for task: t2')
 #plt.grid('on')
 #plt.savefig('plot_time_barplot.pdf')
-#plt.show()
+# 
 #
 #for t in tasks_time_features:
 #    #print('*****  ', t, '  *****')
 #    print(df.loc[:,['lvl',t]].groupby('lvl').mean())
 #    df.loc[:,['lvl',t]].groupby('lvl').mean().plot(kind='bar')
 #    plt.title(['timings for task: ', t])
-#    plt.show()
+#     
 #
 #    
 #print('***** Comparison of total time *****')
@@ -75,7 +76,7 @@ print('shape', df.shape)
 #df.loc[:,"tot_time"] = df.loc[:,"t1_time"] + df.loc[:,"t2_time"] + df.loc[:,"t3_time"] + df.loc[:,"m1_time"] + df.loc[:,"m2_time"] + df.loc[:,"m3_time"]
 #df_tot = df.loc[:,['lvl', 'tot_time']]
 #df_tot.groupby('lvl').mean().plot(kind='bar')
-#plt.show()
+# 
 
 
 # In[7]:
@@ -98,7 +99,7 @@ print("complete shape: ", df_t2_tfr.shape)
 #df_t2_tfr.groupby('lvl').mean().plot(kind='bar')
 #plt.title("# of tfr tries in task t2 for different implementations, including 0 tfr")
 #plt.grid('on')
-#plt.show()
+# 
 #print(df_t2_tfr.groupby('lvl').mean())
 #
 #
@@ -109,7 +110,7 @@ print("shape after dropping 0s: ", df_t2_tfr.shape)
 #
 #df_t2_tfr.loc[:,['lvl']].plot(kind='hist')
 #plt.title('remaining after 0-tfr drop in t1')
-#plt.show()
+# 
 #
 #
 #df_t2_tfr_m=df_t2_tfr#.mean()
@@ -121,12 +122,12 @@ print("shape after dropping 0s: ", df_t2_tfr.shape)
 #plt.title("DUMMY: # of tfr tries in task t2 for different implementations")
 #plt.grid('on')
 #plt.savefig('plot_tfr_barplot.pdf')
-#plt.show()
+# 
 #print(df_t2_tfr.groupby('lvl').mean())
 
 
 # In[10]:
-
+plt0 = plt.figure()
 
 bplot = sns.boxplot(y="t2_tfr", x="lvl", data=df_t2_tfr, whis=1.5)
 plt.title("Two-Finger Rotation Attempts")
@@ -134,17 +135,17 @@ bplot = sns.stripplot(y=df_t2_tfr["t2_tfr"], x=df_t2_tfr["lvl"], jitter=True, ma
 plt.xlabel("case study group")
 plt.ylabel("appearances of gesture")
 plt.savefig('plot_bplot_tfr.pdf', bbox_inches='tight')
-plt.show()
 
-plt.rcParams.update({'font.size': 14})
+
+#plt.rcParams.update({'font.size': 14})
 
 bplot = sns.boxplot(y=df["t2_time"], x=df["lvl"], whis=1.5)
 plt.title("Time")
 bplot = sns.stripplot(y=df["t2_time"], x=df["lvl"], jitter=True, marker='o', alpha=0.3,color='black')
-plt.xlabel("case study group")
-plt.ylabel("time in seconds")
+plt.xlabel('case study group')
+plt.ylabel('time in seconds')
 plt.savefig('plot_bplot_time.pdf', bbox_inches='tight')
-plt.show()
+ 
 
 df["t2_time"].describe()
 
@@ -176,7 +177,7 @@ df.loc[:,'group'] = df.loc[:,'lvl']
 #plt.ylabel('time needed for the task')
 #plt.savefig('plot_scatter.pdf')
 ##plt.legend(['aaa','bbb','ccc','ddd'])
-#plt.show()
+# 
 #
 
 
@@ -204,7 +205,7 @@ plt.ylabel('time needed for the task')
 #plt.legend(['Gp 0','Gp 1','Gp 2','Gp 3'])#, title='group:', loc="upper right")
 plt.legend(['Group 0','Group 1','Group 2','Group 3'])#, title='group:', loc="upper right")
 plt.savefig('plot_scatter.pdf', bbox_inches='tight')
-plt.show()
+ 
 
 
 # In[10]:
@@ -236,11 +237,11 @@ print("\n\n##### Implementation 1 ######")
 diff_tfr = df_0['t2_tfr'] - df_1['t2_tfr']
 stats.probplot(diff_tfr, plot= plt)
 plt.title("probability plot for tfr")
-plt.show()
+ 
 diff_time = df_0['t2_time'] - df_1['t2_time']
 stats.probplot(diff_time, plot= plt)
 plt.title("probability plot for times")
-plt.show()
+ 
 print('normality tfr diff: ', stats.shapiro(diff_tfr)[1])
 print('normality time diff:', stats.shapiro(diff_time)[1])
 #print('normality tfr 0: ', stats.shapiro(df_0['t2_tfr']))
@@ -257,11 +258,11 @@ print("\n\n##### Implementation 2 ######")
 diff_tfr = df_0['t2_tfr'] - df_2['t2_tfr']
 stats.probplot(diff_tfr, plot= plt)
 plt.title("probability plot for tfr")
-plt.show()
+ 
 diff_time = df_0['t2_time'] - df_2['t2_time']
 stats.probplot(diff_time, plot= plt)
 plt.title("probability plot for times")
-plt.show()
+ 
 print('normality tfr diff: ', stats.shapiro(diff_tfr)[1])
 print('normality time diff:', stats.shapiro(diff_time)[1])
 #print('normality tfr 0: ', stats.shapiro(df_0['t2_tfr']))
@@ -278,11 +279,11 @@ print("\n\n##### Implementation 3 ######")
 diff_tfr = df_0['t2_tfr'] - df_3['t2_tfr']
 stats.probplot(diff_tfr, plot= plt)
 plt.title("probability plot for tfr")
-plt.show()
+ 
 diff_time = df_0['t2_time'] - df_3['t2_time']
 stats.probplot(diff_time, plot= plt)
 plt.title("probability plot for times")
-plt.show()
+ 
 print('normality tfr diff: ', stats.shapiro(diff_tfr)[1])
 print('normality time diff:', stats.shapiro(diff_time)[1])
 #print('normality tfr 0: ', stats.shapiro(df_0['t2_tfr']))
@@ -299,11 +300,11 @@ print('Welch time:', stats.ttest_ind(df_0['t2_time'], df_3['t2_time'], equal_var
 
 #print('relates sus score, t2 time and t2 tfr for all data points')
 #sns.pairplot(data=df, vars=['sus', 't2_tfr', 't2_time'], hue='lvl')
-#plt.show()
+# 
 #
 #print('relates sus score, t2 time and t2 tfr for all non-0 tfr data points')
 #sns.pairplot(data=df[df.t2_tfr != 0], vars=['sus', 't2_tfr', 't2_time'], hue='lvl')
-#plt.show()
+# 
 
 
 # In[12]:
@@ -366,7 +367,7 @@ print(df.sum())
 #plt.legend(['tfr','pz']) 
 ## Show graphic
 #plt.savefig('plot_tfr_v_pz.pdf')
-#plt.show()
+# 
 
 
 # In[15]:
@@ -398,7 +399,7 @@ plt.title("Two-Finger Rotation")
 plt.xlabel("task")
 plt.ylabel("appearances of gesture")
 plt.savefig('plot_tfr.pdf', bbox_inches='tight')
-plt.show()
+ 
 
 plt.bar(height=PZ, x=["t 1","t 2","t 3","m 1","m 2","m 3"], color='orange')
 axes = plt.gca()
@@ -408,7 +409,7 @@ plt.title("Pinch-Zoom")
 plt.xlabel("task")
 plt.ylabel("appearances of gesture")
 plt.savefig('plot_pz.pdf', bbox_inches='tight')
-plt.show()
+ 
 
 
 # In[17]:
@@ -420,7 +421,6 @@ plt.show()
 
 
 # In[ ]:
-
 
 
 

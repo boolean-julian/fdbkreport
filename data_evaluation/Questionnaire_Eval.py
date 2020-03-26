@@ -3,11 +3,16 @@
 
 # In[1]:
 
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
+from matplotlib import rc
+from matplotlib.ticker import MaxNLocator
+
+rc('font',**{'family':'serif'})
+rc('text', usetex=True)
+
 plt.rcParams.update({'font.size': 14})
 
 data = pd.read_csv("questionnaire.csv")
@@ -25,12 +30,10 @@ data.shape
 # In[3]:
 
 
-from matplotlib.ticker import MaxNLocator
-
 data_age=data['1_Age']
 ax1 = data_age.plot(kind='hist', title='age of participants')
 ax1.yaxis.set_major_locator(MaxNLocator(integer=True))
-plt.show()
+ 
 
 
 # In[4]:
@@ -38,7 +41,7 @@ plt.show()
 
 version_count=data['implementation'].value_counts()
 version_count.plot(kind='bar', title='Implementations')
-plt.show()
+ 
 
 
 # In[5]:
@@ -87,7 +90,7 @@ plt.axvline(x=1.5, linewidth=0.5)
 plt.axvline(x=3.5, linewidth=0.5)
 plt.axvline(x=5.5, linewidth=0.5)
 plt.title('SUS score for different test groups')
-plt.show()
+ 
 
 
 
@@ -104,8 +107,8 @@ plt.axhline(y=68, linewidth=1, color='r')
 plt.ylabel('SUS score')
 plt.xlabel('case study group')
 plt.savefig('plot_sus.pdf', bbox_inches='tight')
-plt.plot()
-
+plt.close()
+# 
 
 # In[7]:
 
@@ -136,7 +139,7 @@ ax1.set_title('feedback 0')
 ax2.set_title('feedback 1')
 ax3.set_title('feedback 2')
 ax4.set_title('feedback 2')
-plt.show()
+ 
 
 
 # In[8]:
@@ -161,16 +164,13 @@ plt.ylabel('appearances')
 plt.xlabel('answer category')
 plt.xticks(rotation=20)
 plt.savefig('plot_tags.pdf', bbox_inches='tight')
-plt.plot()
-
+plt.close()
 
 # In[11]:
 
 
 # libraries
-import numpy as np
-import matplotlib.pyplot as plt
- 
+
 # width of the bars
 barWidth = 0.18
  
@@ -202,7 +202,7 @@ plt.legend()
 
 # Show and save graphic
 plt.savefig('plot_tags_implementations.pdf', bbox_inches='tight')
-plt.show()
+plt.close()
 
 
 # In[12]:
