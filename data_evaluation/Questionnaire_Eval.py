@@ -1,55 +1,53 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
+# Questionnaire Evaluation. Needs "questionnaire.csv" as input.
 
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib
 from matplotlib import rc
+import matplotlib
 from matplotlib.ticker import MaxNLocator
 
-rc('font',**{'family':'serif'})
+# change font to latex font
+rc('font',**{'family':'serif','serif':['Computer Modern Roman']})
 rc('text', usetex=True)
 
-plt.rcParams.update({'font.size': 14})
-
-data = pd.read_csv("questionnaire.csv")
-
-df = data
-data.head(50)
 
 
-# In[2]:
+# change font sizes for all elements
+TICKS_AND_LEGEND_SIZE = 16
+AXES_TITLE_SIZE = 22
+PLOT_TITLE_SIZE = 22
+
+plt.rc('font', size=TICKS_AND_LEGEND_SIZE)          # controls default text sizes
+plt.rc('axes', titlesize=PLOT_TITLE_SIZE)     # fontsize of the axes title
+plt.rc('axes', labelsize=AXES_TITLE_SIZE)    # fontsize of the x and y labels
+plt.rc('xtick', labelsize=TICKS_AND_LEGEND_SIZE)    # fontsize of the tick labels
+plt.rc('ytick', labelsize=TICKS_AND_LEGEND_SIZE)    # fontsize of the tick labels
+plt.rc('legend', fontsize=TICKS_AND_LEGEND_SIZE)    # legend fontsize
+plt.rc('figure', titlesize=PLOT_TITLE_SIZE)  # fontsize of the figure title
 
 
-data.shape
+
+# read in data
+df = pd.read_csv("questionnaire.csv")
 
 
-# In[3]:
 
+# age distribution and implementation distribution
+#plt.figure()
+#df_age=df['1_Age']
+#ax1 = df_age.plot(kind='hist', title='age of participants')
+#ax1.yaxis.set_major_locator(MaxNLocator(integer=True))
 
-data_age=data['1_Age']
-ax1 = data_age.plot(kind='hist', title='age of participants')
-ax1.yaxis.set_major_locator(MaxNLocator(integer=True))
- 
+#plt.figure()
+#version_count=df['implementation'].value_counts()
+#version_count.plot(kind='bar', title='Implementations')
+#plt.figure()
 
-
-# In[4]:
-
-
-version_count=data['implementation'].value_counts()
-version_count.plot(kind='bar', title='Implementations')
- 
-
-
-# In[5]:
 
 
 # https://usabilitygeek.com/how-to-use-the-system-usability-scale-sus-to-evaluate-the-usability-of-your-website/
-
-sus_df = data.copy()
+sus_df = df.copy()
 sus_df.drop(['date', 'timestamp', 'issues', 'offscreen', '1_Age', '2_priorExp', 'oq'], axis=1, inplace=True)
 
 odd_q = ['3_SUS_1', '5_SUS_3', '7_SUS_5', '9_SUS_7', '11_SUS_9']
@@ -65,17 +63,6 @@ for question in all_q:
     sus_df['total'] = sus_df['total'] + sus_df[question]
 sus_df['total'] *= 2.5 
 
-sus_df.head(50)
-#sus_df.to_csv('output.csv')
-
-
-# In[6]:
-
-
-# !!!!!!!!!
-#sus_df = sus_df.drop(sus_df.index[[37]])
-
-
 implementations = ["TM0", "MT0", "TM1", "MT1", "TM2", "MT2","TM3","MT3"]
 
 sus_result = np.zeros(8)
@@ -90,10 +77,11 @@ plt.axvline(x=1.5, linewidth=0.5)
 plt.axvline(x=3.5, linewidth=0.5)
 plt.axvline(x=5.5, linewidth=0.5)
 plt.title('SUS score for different test groups')
- 
+plt.figure()
 
 
 
+print('make: plot_sus.pdf')
 sus_result_imp = np.zeros(4)
 
 for i in range(4):
@@ -107,12 +95,10 @@ plt.axhline(y=68, linewidth=1, color='r')
 plt.ylabel('SUS score')
 plt.xlabel('case study group')
 plt.savefig('plot_sus.pdf', bbox_inches='tight')
-plt.close()
-# 
-
-# In[7]:
+plt.figure()
 
 
+# single sus question evaluation
 imp0 = np.zeros(10)
 imp1 = np.zeros(10)
 imp2 = np.zeros(10)
@@ -139,39 +125,25 @@ ax1.set_title('feedback 0')
 ax2.set_title('feedback 1')
 ax3.set_title('feedback 2')
 ax4.set_title('feedback 2')
- 
+plt.figure()
 
 
-# In[8]:
 
-
-tag = np.asarray([data.tag1.sum(),data.tag2.sum(),data.tag3.sum(),data.tag4.sum()])
-
-
-# In[9]:
-
-
-tag
-
-
-# In[10]:
-
+print('make: plot_tags.pdf')
+tag = np.asarray([df.tag1.sum(),df.tag2.sum(),df.tag3.sum(),df.tag4.sum()])
 
 plt.bar(height=tag, x=["app feedback","app controls","prototype","other"])
-#plt.title('DUMMY: Amount of open question answers categorized by labels')
+
 plt.savefig('plot_tags.pdf')
 plt.ylabel('appearances')
 plt.xlabel('answer category')
 plt.xticks(rotation=20)
 plt.savefig('plot_tags.pdf', bbox_inches='tight')
-plt.close()
-
-# In[11]:
+plt.figure()
 
 
-# libraries
 
-# width of the bars
+print('make plot_tags_implementations.pdf')
 barWidth = 0.18
  
 # Choose the height of the blue bars
@@ -179,8 +151,6 @@ bars1 = [df[df["lvl"] == 0]["tag1"].sum(), df[df["lvl"] == 1]["tag1"].sum(), df[
 bars2 = [df[df["lvl"] == 0]["tag2"].sum(), df[df["lvl"] == 1]["tag2"].sum(), df[df["lvl"] == 2]["tag2"].sum(), df[df["lvl"] == 3]["tag2"].sum()]
 bars3 = [df[df["lvl"] == 0]["tag3"].sum(), df[df["lvl"] == 1]["tag3"].sum(), df[df["lvl"] == 2]["tag3"].sum(), df[df["lvl"] == 3]["tag3"].sum()]
 bars4 = [df[df["lvl"] == 0]["tag4"].sum(), df[df["lvl"] == 1]["tag4"].sum(), df[df["lvl"] == 2]["tag4"].sum(), df[df["lvl"] == 3]["tag4"].sum()]
-   
- 
 # The x position of bars
 r1 = np.arange(len(bars1))
 r2 = [x + barWidth for x in r1]
@@ -197,53 +167,18 @@ plt.bar(r4, bars4, width = barWidth, label='other', edgecolor="black")
 plt.xticks([r + 1.5* barWidth for r in range(len(bars1))], ['0', '1', '2', '3'])
 plt.ylabel('appearances')
 plt.xlabel('case study group')
-#plt.title('apperances of answers per case study group')
 plt.legend()
-
 # Show and save graphic
 plt.savefig('plot_tags_implementations.pdf', bbox_inches='tight')
-plt.close()
-
-
-# In[12]:
-
-
-df[df["lvl"] == 0][df["tag1"] == 1]['oq'].tolist()
-
-
-# In[13]:
-
-
-#print(df[df["lvl"] == 0][df["tag1"] == 1]['oq'].tolist(), sep="\n\n")
-df[df["lvl"] == 1][df["tag1"] == 1]['oq'].tolist()
-
-
-# In[14]:
-
-
-df[df["lvl"] == 2][df["tag1"] == 1]['oq'].tolist()
-
-
-# In[15]:
-
-
-df[df["lvl"] == 3][df["tag1"] == 1]['oq'].tolist()
-
-
-# In[ ]:
+plt.figure()
 
 
 
+# open question answer per tag. Put tag0, tag1, tag2 or tag3 for different categories
+print(df[df["lvl"] == 0][df["tag1"] == 1]['oq'].tolist())
 
+print(df[df["lvl"] == 1][df["tag1"] == 1]['oq'].tolist())
 
-# In[ ]:
+print(df[df["lvl"] == 2][df["tag1"] == 1]['oq'].tolist())
 
-
-
-
-
-# In[ ]:
-
-
-
-
+print(df[df["lvl"] == 3][df["tag1"] == 1]['oq'].tolist())
