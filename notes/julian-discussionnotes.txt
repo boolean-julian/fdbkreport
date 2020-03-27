@@ -11,7 +11,7 @@ We have to divide the evaluation of the rotation into two groups, as we do for o
 	
 	1st sentence: Why do we *have* to divide it like that? Just say we did it that way and not that we had to maybe
 	
-	then maybe continue like so: ... struggled when trying to rotate the pieces of bread. There were two occurences of tasks in which an object had to be rotated in order to complete them, namely the second and third toaster tasks (ref to task table) [don't mention task name again]. However, our results suggest that once the participants learned how to rotate the toasts in the second toaster task, most of them knew how to accomplish said rotation in the third toaster task [insert numbers of failed tries for the two maybe]. Therefore we focus on the second toaster task. 
+	then maybe continue like so: While most of the users intuitively walked around objects to rotate their view on the scene, they struggled when trying to rotate the pieces of bread. There were two occurences of tasks in which an object had to be rotated in order to complete them, namely the second and third toaster tasks (ref to task table) [don't mention task name again]. However, our results suggest that once the participants learned how to rotate the toasts in the second toaster task, most of them knew how to accomplish said rotation in the third toaster task [insert numbers of failed tries for the two maybe]. Therefore we focus on the second toaster task. 
 
 	another thing: The specific task is just ``Toast the bread'', but this includes rotating the object laying on the plate (see \ref{fig:feedbackonphone} A) by $90\degree$ to put it into the device. <-- this and other such observations concerning why we chose the tasks we did choose most likely belong into the case study setup, because we do not need know the results in order to tell what subtasks our tasks include. it was just basic assumption when we designed the study. putting it here would either mean mentioning it twice or mentioning it in the wrong place imho.
 
@@ -32,7 +32,7 @@ The feedback versions we provided performed differently in the case study. While
 	* "did not HAVE a significant effect"
 	
 	instead maybe:
-	according to our results, prior knowledge about AR applications cannot account for this effect [these effects?], because the support feedback groups had the lowest percentage of participants with prior knowledge in them.
+	according to our results, prior knowledge about AR applications cannot account for this effect [these effects?], because the support feedback groups had the lowest percentage of participants with prior AR knowledge.
 
 	* can assume -> assume
 	* multiple reasons or fancily "a multitude of reasons" hEHEHE
@@ -65,10 +65,17 @@ FOURTH PARAGRAPH
 	* "since the feedback messages were targeted at increasing the overall usability of [mobile AR?] apps"
 	* "other aspects" - describe pls (at least examples i.e. quality of graphics (lighting and shading), controls, ...)
 	
+	Although there was a significant difference in the performance between groups, the results of our \ac{SUS} questionnaire do not clearly show a difference between the case study groups for the different implementations (see Figure \ref{fig:sus}). Thus the performance in the tasks did not influence the SUS score.
+
 	* "that is why" that does not seem like a valid reason. maybe better:
 		With the number of participants we tested however, no significant effect of our feedback on the overall usability according to the SUS can be reported. Given a larger sample size it might be possible to find such effects.
 
 	* "strongly rated" -> "often rated" or describe the influence this (partial) rating had on the total rating
 		* 	already mention what you mention later here (The answers to the open question fit to this impression)
 			maybe like so:
-				The results from the open question, which was directly pointed at the feedback we provide (or do not provide in the case of the control group), suggest that the participants might have often rated the quality of the prototype itself rather than the overall application in the course of the SUS questionnaire (ref to fig), just like they did in the open question.
+				The results from the open question, which was directly pointed at the feedback we provide (or do not provide in the case of the control group), suggest that the participants might have often rated the quality of the prototype itself rather thanc the overall application in the course of the SUS questionnaire (ref to fig), just like they did in the open question.
+
+
+				The results from the open question, which was directly pointed at the feedback we provide (or do not provide in the case of the control group)
+
+				Moreover, the users often referred to the overall application in the open question, although they were asked to evaluate the feedback the applications provided (or did not provide in the case of the control group). This suggests that the participants might have often rated the quality of the prototype itself rather than the overall application in the course of the SUS questionnaire , just like they did in the open question.
