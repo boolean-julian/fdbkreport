@@ -61,8 +61,14 @@ Our data states that participants perform significantly better with the \emph{su
 
 
 FOURTH PARAGRAPH
-	"feel the usability" - "see the usability"
-	"other aspects" - describe pls (at least examples)
-	"since the feedback messages were targeted at increasing the overall usability of [all vivian framework or smth?] apps"
-	"that is why" that does not seem like a valid reason
-	bruh
+	* "feel the usability" - "see the usability"/"rate the usability"
+	* "since the feedback messages were targeted at increasing the overall usability of [mobile AR?] apps"
+	* "other aspects" - describe pls (at least examples i.e. quality of graphics (lighting and shading), controls, ...)
+	
+	* "that is why" that does not seem like a valid reason. maybe better:
+		With the number of participants we tested however, no significant effect of our feedback on the overall usability according to the SUS can be reported. Given a larger sample size it might be possible to find such effects.
+
+	* "strongly rated" -> "often rated" or describe the influence this (partial) rating had on the total rating
+		* 	already mention what you mention later here (The answers to the open question fit to this impression)
+			maybe like so:
+				The results from the open question, which was directly pointed at the feedback we provide (or do not provide in the case of the control group), suggest that the participants might have often rated the quality of the prototype itself rather than the overall application in the course of the SUS questionnaire (ref to fig), just like they did in the open question.
