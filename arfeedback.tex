@@ -68,31 +68,11 @@
 
 	% Acronyms go here, refer to them with \ac{shorthand}
 	\begin{abstract}
-		% Abstract goes here
 		Mobile \ac{AR} applications have gained in importance over the years. Although they provide a variety of uses, they remain mostly unknown by the public, which results in poor understanding of the controls and features. Our research goal is to find out how to react to incorrect mobile \ac{AR} usage in order to enhance the usability of mobile \ac{AR} applications. For this purpose, we implemented three generic sets of textual feedback for \ac{AR} applications with different content. In order to assess the potential gain in usability provided by these feedback messages, we conducted a case study. In this case study, we asked 40 participants to execute a predefined set of tasks and evaluated their errors when using the mobile \ac{AR}. We found that, given appropriate feedback, most people still use incorrect gestures, but quickly recover from mistakes and are much less likely to do them more often.
 	\end{abstract}
 	\maketitle
 
-	\pagebreak
 	\section{Introduction}\label{sec:introduction}
-		% Motivation
-		% * Growing use of Augmented Reality and Lack of good feedback
-		% * new technology: people don't yet know how to use AR features
-		% * making AR usable without huge introductory efforts
-		%
-		% Research goals/questions
-		% * To provide appropriate feedback to "wrong" AR usage/gestures
-		% 	* To decide what type of feedback is better in comparison to other types
-		%
-		% Structure of report
-		% * "For validation of our approach we conducted a usability case study"
-		% * What will follow in the next sections
-		%
-		% moar sauce
-		% https://www.statista.com/statistics/608967/mobile-ar-applications-installed-base-worldwide/
-		% https://medium.com/iquii/augmented-reality-the-growth-through-smartphones-and-apps-and-the-future-for-businesses-ecb7dc9b17df
-		%
-
 		In recent years, the number of available mobile \ac{AR} applications for smartphones has increased~\citep{Tractica2017}. Although mobile \ac{AR} technology is no novelty, it was not widely available for public until most smartphones became capable of running \ac{AR} applications. Since most users are newly discovering \ac{AR} technology, they do not know how to use its features yet. Instead, they use unsupported gestures as inputs, which leads to frustration. Our main motivation for conducting this research is the lack of good feedback in case of incorrect usage, which could help a lot of users to avoid repeating common mistakes while using \ac{AR} applications for smartphones. Providing good feedback could also help and teach users to control such \ac{AR} applications without the need of a separate introduction.
 
 		Our research goal is to provide appropriate feedback to unsupported gestures and decide what type of textual feedback is the best. Our work is guided by the research question: ``How can feedback on incorrect gestures in mobile AR improve its usage?''. Therefore, we defined 3 different types of feedback. To evaluate which variant works best, we conducted a usability case study. In this study, we asked 40 test participants to interact with virtual prototypes of technical devices visualized in mobile \ac{AR}. The participants were subdivided into four groups, where one group got no feedback at all and the three other ones were provided with one of our proposed feedback approaches. Our results show that one of our approaches improves the mobile \ac{AR} usage.
@@ -105,9 +85,9 @@
 		The main goal of our work is to find suitable user feedback for mobile \ac{AR} applications. In this section, we first clarify our notion of mobile \ac{AR} and describe the technologies we use. The generic term \ac{AR} itself describes a variety of technologies that place 3D virtual objects into a 3D real environment in real time. This can be achieved by a handheld device like a mobile phone (mobile \ac{AR}) or using wearable goggles like the Microsoft HoloLens. In this paper we focus on \ac{AR} for mobile phones, where recorded imagery of the phone is being augmented and shown to the user to display a mix of virtual objects and the real world at runtime. Examples for this are shown in Figure~\ref{fig:feedbackonphone}. Parts (a) and (b) visualize a virtual toaster with toastable bread on real world tables. Part (c) visualizes a virtual microwave and a slize of pizza on a virtual plate.
 		\begin{figure}[H]
 			\centering
-			\subfigure[]{\includegraphics[width=.32\textwidth]{img/phone/phonepz1.png}}
-			\subfigure[]{\includegraphics[width=.32\textwidth]{img/phone/phonepz2.png}}
-			\subfigure[]{\includegraphics[width=.32\textwidth]{img/phone/phonepz3.png}}
+			\subfigure[]{\includegraphics[width=.28\textwidth]{img/phone/phonepz1.png}}
+			\subfigure[]{\includegraphics[width=.28\textwidth]{img/phone/phonepz2.png}}
+			\subfigure[]{\includegraphics[width=.28\textwidth]{img/phone/phonepz3.png}}
 			\caption{Three screenshots of an app made with the Vivian framework.}
 			\label{fig:feedbackonphone}
 			\Description{Three screenshots of an app made with the Vivian framework}{}
@@ -117,20 +97,13 @@
 		%         * What gestures are "correct"? (vivian relies on 1 finger shit and moving environment)
 		The tasks that we ask our users to execute in our case study consist of different interactions with virtual prototypes of technical devices as shown in Figure~\ref{fig:feedbackonphone}. A virtual prototype is a \textit{``\textnormal{[…]} computer simulation of a physical product that can be presented, analyzed, and tested from concerned product life-cycle aspects such as design/engineering, manufacturing, service, and recycling as if on a real physical model.''}~\cite{Wang2002}. In our study those virtual objects are prototypes of technical devices like a microwave or a toaster. For the implementation of those prototypes we used the Vivian framework. It is an extension for the game engine Unity3D~\cite{Unity}, that can be used to create mobile \ac{AR} implementations of virtual prototypes using a 3D model and finite-state machines. In a mobile app made with the Vivian framework, all user inputs rely on one finger gestures on the touch screen. Examples for virtual prototypes visualized by Vivian in mobile AR are shown in Figure~\ref{fig:feedbackonphone}. Users can interact with the different 3D models on the screen. Buttons can be pressed by simply tapping the screen where the respective button is displayed. Knobs and levers can be moved by putting a finger on the screen where the knob or lever is displayed, moving the finger on the screen until finding the desired position, and removing the finger from the screen afterwards. We refer to this gesture as \emph{drag-and-drop}. The Vivian framework makes a clear distinction between movable and non-movable objects in a scene. The slice of bread in part (a) of Figure~\ref{fig:feedbackonphone} example is movable, whereas the toaster itself cannot be moved. Movable objects can be moved in the same fashion as a lever. To cover greater distances, one can move the device itself while dragging the object. Rotation similarly requires the user to hold their finger on the object and rotate the device until they find the desired orientation.
 
-		% last sentence of the next paragraph is by patrick, I doubt it is very good tho
 		The limit of one-finger-interactions exists due to the peculiarity of mobile \ac{AR} environments. Two-finger-interactions (like a pinch-zoom or a two-finger-rotation) would contradict the intended design of such an environment. If users want to take a closer look at a virtual object, they would need to step closer to it instead of performing a pinch-zoom. Instead of a two finger rotation, users should interact more realistically, by grabbing an object using the mobile phones screen and rotating it using the mobile phones rotation.
 
-		% * What is Usability(-testing)?
-		%     * Explain SUS (how did we tailor it to serve our purposes?)
 		To evaluate different types of feedback, we decided to use usability testing as a tool to quantify the corresponding results. According to Nielsen, \textit{``usability is a quality attribute that assesses how easy user interfaces are to use. The word "usability" also refers to methods for improving ease-of-use during the design process.''}~\cite{Nielsen2012}. Usability testing refers to an \textit{``observational methodology to uncover problems and opportunities in designs''} with the goal to identify problems in the design of the product or service. It also helps to uncover opportunities to improve and to learn about the target user's behavior and preferences~\cite{Moran2019}.
 
 		In addition to observing users while interacting with a product or service, an established method is the usage of questionnaires. Those can help to find out about the users attitude towards the product as well as the main issues they experienced. A well-known questionnnaire is the system usability scale~\cite{SUS2019}. It is a single choice questionnaire which consists of ten items with five response options, ranging from 0 (\emph{strongly disagree}), to 4 (\emph{strongly agree}). Odd numbered questions are phrased positively towards the system in question, whereas even numbered questions are phrased negatively. For the evaluation, responses to the negative questions are subtracted from 5. The responses are then added together and multiplied by 2.5, yielding the so called SUS score, which lies between 0 and 100, where 100 means good usability. A mean SUS score of 68 stands for average usability. We chose to have the users fill out a \ac{SUS} questionnaire which we tailored to fit our needs. We also added an open question which was directly related to the feedback type.
 
 	\section{Related Work}\label{sec:relatedwork}
-		% Papers (as to be found in *.bib):
-		% * Dey2016: A Systematic Review of 10 Years of Augmented Reality Usability Studies: 2005 to 2014 TODO remove
-		% * Nilsson2007: Fun and Usable: Augmented Reality Instructions in a Hospital Setting
-		% * Poupyrev2002: Developing a Generic Augmented Reality Interface
 		The topic of error handling in \ac{AR}-applications has not been broadly studied yet. There are several guidelines on how to handle wrong user input. Microsoft states in its design guidelines, that error messages should alert users of an already occurred problem~\cite{Microsoft2018}. Another point they make is that the message should be suppressed if it does not make the users change their behavior or perform an action~\cite{Microsoft2018}. In addition to that, Nielsen's \textit{Error Message Guidelines} demand error messages to be phrased politely. This is to avoid the impression that the user did something stupid or inherently wrong. It is also important that the messages are precise descriptions of exact problems, offering constructive advice on how to fix the problem~\cite{Nielsen2001}.
 
 		\citeauthor{Poupyrev2002} discuss two approaches of how user help might be implemented in \ac{AR} environments. They offered  an icon which the users might activate themselves when they seek advice for a given task. The other feature was an automated help message that pops up when the user moves an object associated to a certain task closer to his face and tilts it. They state, that \textit{"\textnormal{[t]}his approach is more suitable for AR interfaces than traditional desktop help systems, which either distract users with a constant barrage of help messages or interrupt their work by making them search explicitly for help."}~\cite{Poupyrev2002}.
@@ -138,10 +111,6 @@
 		Our work ties in with these principles by seeking to find useful feedback after the occurrence of incorrect user input. The main focus is to give users helpful advice when interacting with mobile AR in an AR-contradicting manner.
 
 	\section{Approach}\label{sec:approach}
-		% What are "wrong" inputs? Which ones are "wrong"?
-		% Describe feedback messages (size, color, content, duration) for each implementation <- graphics
-		% Why these messages?
-		% maybe a nice reference Table for that too
 		The goal of our work is to provide users of mobile \ac{AR} with feedback in case of unsupported interactions. For this, we developed three types of feedback messages. Each differs in content, color, and size (see Figure~\ref{fig:feedbackonphone}). In this section, we will first describe the most common user input gestures made on the touch screen which do not work in mobile \ac{AR}. Then, we present the exact content of our feedback messages and the conditions under which they appear.
 
 		\subsection{Inappropriate Gestures in Mobile AR}\label{ssec:incorrectinput}
@@ -179,11 +148,6 @@
 		We recognize user input using a software library called TouchKit~\cite{TouchKit}. TouchKit provides an easy way to detect gestures such as our two-finger rotations and pinch-zooms.
 
 	\section{Case Study}\label{sec:casestudy}
-		%unfixed:
-		%- why in the domain of usability engineering?
-		%- mentioned Vivian Framework, where should it be exactly?
-		%- time tenses
-		%- all p-values should be given (statistics)
 		To evaluate the quality of our feedback implementations we conducted a case study. In this case study, we asked participants to interact with a mobile AR. Our goal was to trigger interactions with like pinch-zoom and two-finger-rotation and to see which feedback message type helped the participants best to find the correct interaction. In this section we describe in detail what each participant in the case study had to do and what data we collected. Then we provide our results and discuss their meaning.
 		
 		\subsection{Setup of the Case Study}\label{ssec:setup}
